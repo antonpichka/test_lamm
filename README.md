@@ -1,7 +1,9 @@
 ## About the project
 
 Game: Dead By Daylight
+
 Number of players: 2
+
 Objective: The killer needs to kill the survivor, where the winner is the one who killed the survivor faster
 
 ### Project details
