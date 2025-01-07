@@ -1,0 +1,13 @@
+name: test_lamm
+version: 1.0.0+1
+publish_to: 'none'
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  library_architecture_mvvm_modify: ^6.0.9
+
+dev_dependencies:
+  test: ^1.25.14
+  lints: ^5.1.1
