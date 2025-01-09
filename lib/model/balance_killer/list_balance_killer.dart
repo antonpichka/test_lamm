@@ -1,18 +1,18 @@
 import 'package:library_architecture_mvvm_modify/library_architecture_mvvm_modify.dart';
 import 'package:meta/meta.dart';
-import 'package:test_lamm/model/balance/balance_rr_killer/balance_rr_killer.dart';
+import 'package:test_lamm/model/balance_killer/balance_killer.dart';
 
 @immutable
-base class ListBalanceRRKiller<T extends BalanceRRKiller> extends BaseListModel<T> {
-  const ListBalanceRRKiller(super.listModel);
+base class ListBalanceKiller<T extends BalanceKiller> extends BaseListModel<T> {
+  const ListBalanceKiller(super.listModel);
 
   @override
-  ListBalanceRRKiller<T> clone() {
+  ListBalanceKiller<T> clone() {
     List<T> newListModel = List.empty(growable: true);
     for (final T itemModel in listModel) {
       newListModel.add(itemModel.clone() as T);
     }
-    return ListBalanceRRKiller<T>(newListModel);
+    return ListBalanceKiller<T>(newListModel);
   }
 
   @override
@@ -21,6 +21,6 @@ base class ListBalanceRRKiller<T extends BalanceRRKiller> extends BaseListModel<
     for (final T itemModel in listModel) {
       strListModel += "$itemModel,\n";
     }
-    return "ListBalanceRRKiller(listModel: [$strListModel])";
+    return "ListBalanceKiller(listModel: [$strListModel])";
   }
 }
