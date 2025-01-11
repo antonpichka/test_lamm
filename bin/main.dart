@@ -1,5 +1,5 @@
-import 'package:test_lamm/example.dart';
+import 'package:library_architecture_mvvm_modify/library_architecture_mvvm_modify.dart';
 
 void main(List<String> arguments) {
-  print('Hello world: ${calculate()}!');
+  debugPrint("Hello world !");
 }
