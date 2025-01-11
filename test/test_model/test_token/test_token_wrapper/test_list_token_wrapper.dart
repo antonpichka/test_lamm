@@ -1,0 +1,22 @@
+import 'package:test/test.dart';
+import 'package:test_lamm/model/token/token_wrapper/list_token_wrapper.dart';
+
+void main() {
+  test("createListModel", () {
+    final listTokenWrapper = ListTokenWrapper([
+      [
+        "9c74bd4c-d02d-11ef-9cd2-0242ac120002",
+        "hg4QXq6TZvMjAMKRC7fWIVF8rXyLutZIZs0KEEUifr1l2eJTJRHIo4OMXap0OUXkJX8IxCaqLSBUWD5fhDAFuVrwUjzQRsWCD2yLemz1xU87atcDkdKp3thmoRsYUhKYgATrpQJbKZvKGA5OeXsK9Iy7FGRrKKXp4YgkJAF9ifJYf2KqmFRd3zoOVB1Z51WBx3lZjDpPumqDBWoGiFY6op9coUyd9uDptyBhD4RZwjliOiqmedZ2IjDzmiHtl0BDi1jOeTo1KVyTBwBRAebM8FOZjhPmYspjhuwglmoOHlfqsaSZ3fKAeETAdEZ3XuYmKvP1raoelxQOqk2xQSkyDb8KFWVhb90QiXL74JydUIi1VOQoS7EwruXAFEcdqCEmOkAcXx9yC0QwQM33tUUCHUpZvP0TVK0kOgtEOQufKLEXhUlrb9Ey5MoqyLD75KepPzHRD6XQtu3tFU1m1c8PdW8g4dq1TvGlVXzTGLEDLZZJjYUK4fr5ckxCrvfaz31p"
+      ],
+      [
+        "9c74bd4c-d02d-11ef-9cd2-0242ac120002",
+        "hg4QXq6TZvMjAMKRC7fWIVF8rXyLutZIZs0KEEUifr1l2eJTJRHIo4OMXap0OUXkJX8IxCaqLSBUWD5fhDAFuVrwUjzQRsWCD2yLemz1xU87atcDkdKp3thmoRsYUhKYgATrpQJbKZvKGA5OeXsK9Iy7FGRrKKXp4YgkJAF9ifJYf2KqmFRd3zoOVB1Z51WBx3lZjDpPumqDBWoGiFY6op9coUyd9uDptyBhD4RZwjliOiqmedZ2IjDzmiHtl0BDi1jOeTo1KVyTBwBRAebM8FOZjhPmYspjhuwglmoOHlfqsaSZ3fKAeETAdEZ3XuYmKvP1raoelxQOqk2xQSkyDb8KFWVhb90QiXL74JydUIi1VOQoS7EwruXAFEcdqCEmOkAcXx9yC0QwQM33tUUCHUpZvP0TVK0kOgtEOQufKLEXhUlrb9Ey5MoqyLD75KepPzHRD6XQtu3tFU1m1c8PdW8g4dq1TvGlVXzTGLEDLZZJjYUK4fr5ckxCrvfaz31p"
+      ]
+    ]);
+    final createListModel = listTokenWrapper.createListModel();
+    expect('ListToken(listModel: [\n'
+        'Token(uniqueId: 9c74bd4c-d02d-11ef-9cd2-0242ac120002, accessTokenByOAuth: hg4QXq6TZvMjAMKRC7fWIVF8rXyLutZIZs0KEEUifr1l2eJTJRHIo4OMXap0OUXkJX8IxCaqLSBUWD5fhDAFuVrwUjzQRsWCD2yLemz1xU87atcDkdKp3thmoRsYUhKYgATrpQJbKZvKGA5OeXsK9Iy7FGRrKKXp4YgkJAF9ifJYf2KqmFRd3zoOVB1Z51WBx3lZjDpPumqDBWoGiFY6op9coUyd9uDptyBhD4RZwjliOiqmedZ2IjDzmiHtl0BDi1jOeTo1KVyTBwBRAebM8FOZjhPmYspjhuwglmoOHlfqsaSZ3fKAeETAdEZ3XuYmKvP1raoelxQOqk2xQSkyDb8KFWVhb90QiXL74JydUIi1VOQoS7EwruXAFEcdqCEmOkAcXx9yC0QwQM33tUUCHUpZvP0TVK0kOgtEOQufKLEXhUlrb9Ey5MoqyLD75KepPzHRD6XQtu3tFU1m1c8PdW8g4dq1TvGlVXzTGLEDLZZJjYUK4fr5ckxCrvfaz31p),\n'
+        'Token(uniqueId: 9c74bd4c-d02d-11ef-9cd2-0242ac120002, accessTokenByOAuth: hg4QXq6TZvMjAMKRC7fWIVF8rXyLutZIZs0KEEUifr1l2eJTJRHIo4OMXap0OUXkJX8IxCaqLSBUWD5fhDAFuVrwUjzQRsWCD2yLemz1xU87atcDkdKp3thmoRsYUhKYgATrpQJbKZvKGA5OeXsK9Iy7FGRrKKXp4YgkJAF9ifJYf2KqmFRd3zoOVB1Z51WBx3lZjDpPumqDBWoGiFY6op9coUyd9uDptyBhD4RZwjliOiqmedZ2IjDzmiHtl0BDi1jOeTo1KVyTBwBRAebM8FOZjhPmYspjhuwglmoOHlfqsaSZ3fKAeETAdEZ3XuYmKvP1raoelxQOqk2xQSkyDb8KFWVhb90QiXL74JydUIi1VOQoS7EwruXAFEcdqCEmOkAcXx9yC0QwQM33tUUCHUpZvP0TVK0kOgtEOQufKLEXhUlrb9Ey5MoqyLD75KepPzHRD6XQtu3tFU1m1c8PdW8g4dq1TvGlVXzTGLEDLZZJjYUK4fr5ckxCrvfaz31p),\n'
+        '])', createListModel.toString());
+  });
+}
