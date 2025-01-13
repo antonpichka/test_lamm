@@ -1,4 +1,5 @@
 import 'package:library_architecture_mvvm_modify/library_architecture_mvvm_modify.dart' as lamm;
+import 'package:test_lamm/named_utility/algorithms_utility.dart';
 import 'package:test_lamm/named_vm/example_vm/data_for_example_vm.dart';
 import 'package:test_lamm/named_vm/example_vm/enum_data_for_example_vm.dart';
 
@@ -35,17 +36,20 @@ final class ExampleVM {
     final dataWNamed = _namedStreamWState.getDataForNamed;
     switch (dataWNamed.getEnumDataForNamed) {
       case EnumDataForExampleVM.isLoading:
-        lamm.debugPrint("Build: IsLoading");
+        AlgorithmsUtility.debugPrintWhereConsoleFromThisClassAndText(this, "IsLoading");
         break;
       case EnumDataForExampleVM.exception:
-        lamm.debugPrint("Build: Exception(${dataWNamed.exceptionController.getKeyParameterException})");
+        AlgorithmsUtility.debugPrintWhereConsoleFromThisClassAndText(this, "Exception(${dataWNamed.exceptionController.getKeyParameterException})");
         break;
       case EnumDataForExampleVM.success:
-        lamm.debugPrint("Build: Success");
+        AlgorithmsUtility.debugPrintWhereConsoleFromThisClassAndText(this, "Success");
         break;
     }
   }
 
   Future<void> _firstRequest() async {
+    _namedStreamWState
+        .getDataForNamed
+        .isLoading = false;
   }
 }
