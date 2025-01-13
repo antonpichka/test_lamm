@@ -1,0 +1,4 @@
+enum EnumRoutersUtility {
+  searchGame,
+  mainVM
+}
