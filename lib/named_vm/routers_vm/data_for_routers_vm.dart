@@ -1,13 +1,15 @@
 import 'package:library_architecture_mvvm_modify/library_architecture_mvvm_modify.dart';
 import 'package:test_lamm/model/token/token.dart';
+import 'package:test_lamm/model/user_w_username/user_w_username.dart';
 import 'package:test_lamm/named_utility/enum_routers_utility.dart';
 import 'package:test_lamm/named_vm/routers_vm/enum_data_for_routers_vm.dart';
 
 final class DataForRoutersVM extends BaseDataForNamed<EnumDataForRoutersVM> {
   Token token;
   EnumRoutersUtility enumRoutersUtility;
+  UserWUsername userWUsername;
 
-  DataForRoutersVM(super.isLoading, this.token, this.enumRoutersUtility);
+  DataForRoutersVM(super.isLoading, this.token, this.enumRoutersUtility, this.userWUsername);
 
   @override
   EnumDataForRoutersVM get getEnumDataForNamed {
@@ -20,8 +22,11 @@ final class DataForRoutersVM extends BaseDataForNamed<EnumDataForRoutersVM> {
     if(token.uniqueId.isEmpty) {
       return EnumDataForRoutersVM.loginVM;
     }
-    if(enumRoutersUtility == EnumRoutersUtility.searchGame) {
-      return EnumDataForRoutersVM.searchGame;
+    if(enumRoutersUtility == EnumRoutersUtility.searchGameVM) {
+      return EnumDataForRoutersVM.searchGameVM;
+    }
+    if(enumRoutersUtility == EnumRoutersUtility.gameMatchVM) {
+      return EnumDataForRoutersVM.gameMatchVM;
     }
     return EnumDataForRoutersVM.mainVM;
   }
@@ -31,6 +36,11 @@ final class DataForRoutersVM extends BaseDataForNamed<EnumDataForRoutersVM> {
     return "DataForRoutersVM(isLoading: $isLoading, "
         "exceptionController: $exceptionController, "
         "token: $token, "
-        "enumRoutersUtility: $enumRoutersUtility)";
+        "enumRoutersUtility: $enumRoutersUtility, "
+        "userWUsername: $userWUsername)";
+  }
+
+  bool isWhereIsNotEmptyByUniqueIdParameterToken() {
+    return token.uniqueId.isNotEmpty;
   }
 }

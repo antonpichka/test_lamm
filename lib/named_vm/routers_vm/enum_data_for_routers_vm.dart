@@ -2,6 +2,7 @@ enum EnumDataForRoutersVM {
   isLoading,
   exception,
   loginVM,
-  searchGame,
+  searchGameVM,
+  gameMatchVM,
   mainVM,
 }
