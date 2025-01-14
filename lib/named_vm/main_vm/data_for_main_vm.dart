@@ -5,7 +5,7 @@ import 'package:test_lamm/named_vm/main_vm/enum_data_for_main_vm.dart';
 
 final class DataForMainVM extends BaseDataForNamed<EnumDataForMainVM> {
   final Token token;
-  UserWUsername userWUsername;
+  final UserWUsername userWUsername;
 
   DataForMainVM(super.isLoading,this.token, this.userWUsername);
 

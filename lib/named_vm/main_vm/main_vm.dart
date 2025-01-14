@@ -1,7 +1,6 @@
 import 'dart:io';
 import 'package:library_architecture_mvvm_modify/library_architecture_mvvm_modify.dart' as lamm;
 import 'package:test_lamm/model/token/token.dart';
-import 'package:test_lamm/model/user/user.dart';
 import 'package:test_lamm/model/user_w_username/user_w_username.dart';
 import 'package:test_lamm/named_utility/algorithms_utility.dart';
 import 'package:test_lamm/named_utility/enum_routers_utility.dart';
@@ -19,8 +18,8 @@ final class MainVM {
   // NamedStreamWState
   late final lamm.BaseNamedStreamWState<DataForMainVM> _namedStreamWState;
 
-  MainVM() {
-    _namedStreamWState = lamm.DefaultStreamWState(DataForMainVM(true,Token("",""),UserWUsername("",User("",DateTime.now(),""),"")));
+  MainVM(Token token, UserWUsername userWUsername) {
+    _namedStreamWState = lamm.DefaultStreamWState(DataForMainVM(true,token,userWUsername));
     _init();
   }
 
@@ -48,7 +47,7 @@ final class MainVM {
         AlgorithmsUtility.debugPrintWhereConsoleFromThisClassAndText(this, "Exception(${dataWNamed.exceptionController.getKeyParameterException})");
         break;
       case EnumDataForMainVM.navigation:
-        AlgorithmsUtility.debugPrintWhereConsoleFromThisClassAndText(this, "Navigation(\nExit: 0\nSearchGame: 1\nUnAuthorization: 2\nInput: )");
+        AlgorithmsUtility.debugPrintWhereConsoleFromThisClassAndText(this, "Navigation(${dataWNamed.userWUsername}\nExit: 0\nSearchGame: 1\nUnAuthorization: 2\nInput: )");
         final input = stdin.readLineSync();
         final numberWhereStrConvertedWZeroFromInput = AlgorithmsUtility.getNumberWhereStrConvertedWZeroFromInput(input);
         _choice(numberWhereStrConvertedWZeroFromInput);
@@ -57,19 +56,9 @@ final class MainVM {
   }
 
   Future<void> _firstRequest() async {
-    final userWUsername = UserWUsername(
-        "5e4e48de-d1cd-11ef-9cd2-0242ac120002",
-        User(
-            "65a63bd2-d1cd-11ef-9cd2-0242ac120002",
-            DateTime.fromMillisecondsSinceEpoch(1736516582),
-            "Discord"),
-        "Top1");
     _namedStreamWState
         .getDataForNamed
         .isLoading = false;
-    _namedStreamWState
-        .getDataForNamed
-        .userWUsername = userWUsername;
   }
 
   void _choice(int number) {
@@ -93,7 +82,7 @@ final class MainVM {
   }
 
   void _firstQQChoiceQQIsWhereEqualsOneFromNumber() {
-    _tempCacheProvider.updateWNotify(KeysTempCacheProviderUtility.enumRoutersUtility, EnumRoutersUtility.searchGame);
+    _tempCacheProvider.updateWNotify(KeysTempCacheProviderUtility.enumRoutersUtility, EnumRoutersUtility.searchGameVM);
     _dispose();
   }
 
