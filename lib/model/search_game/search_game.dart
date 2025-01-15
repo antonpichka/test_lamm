@@ -25,6 +25,10 @@ base class SearchGame extends BaseModel {
     return isAccepted && isAcceptedWEnemy;
   }
 
+  bool isWhereTrueAndFalseParametersIsAcceptedAndIsAcceptedWEnemy() {
+    return isAccepted && !isAcceptedWEnemy;
+  }
+
   bool isWhereTrueAndIsEmptyByUniqueIdParametersIsSearchingAndUserWEnemy() {
     return isSearching && userWEnemy.uniqueId.isEmpty;
   }
