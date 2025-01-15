@@ -23,6 +23,9 @@ final class DataForSearchGameVM extends BaseDataForNamed<EnumDataForSearchGameVM
     if(exceptionController.isWhereNotEqualsNullParameterException()) {
       return EnumDataForSearchGameVM.exception;
     }
+    if(searchGame.isWhereTrueAndFalseParametersIsAcceptedAndIsAcceptedWEnemy()) {
+      return EnumDataForSearchGameVM.acceptanceWEnemy;
+    }
     if(searchGame.isWhereTrueAndIsEmptyByUniqueIdParametersIsSearchingAndUserWEnemy()) {
       return EnumDataForSearchGameVM.searchMode;
     }
