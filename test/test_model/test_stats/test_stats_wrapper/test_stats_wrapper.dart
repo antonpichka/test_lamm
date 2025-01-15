@@ -5,13 +5,17 @@ void main() {
   test("createModel", () {
     final statsWrapper = StatsWrapper([
       "8fbd97a0-cfc3-11ef-9cd2-0242ac120002",
-      "c92b89c8-cfca-11ef-9cd2-0242ac120002",
-      DateTime.fromMillisecondsSinceEpoch(1736516582),
-      "Discord",
-      "edcb25e0-cfca-11ef-9cd2-0242ac120002",
-      1,
-      DateTime.fromMillisecondsSinceEpoch(1736516582),
-      DateTime.fromMillisecondsSinceEpoch(1736516582),
+      [
+        "c92b89c8-cfca-11ef-9cd2-0242ac120002",
+        DateTime.fromMillisecondsSinceEpoch(1736516582),
+        "Discord",
+      ],
+      [
+        "edcb25e0-cfca-11ef-9cd2-0242ac120002",
+        1,
+        DateTime.fromMillisecondsSinceEpoch(1736516582),
+        DateTime.fromMillisecondsSinceEpoch(1736516582),
+      ],
       0,
       0,
       500

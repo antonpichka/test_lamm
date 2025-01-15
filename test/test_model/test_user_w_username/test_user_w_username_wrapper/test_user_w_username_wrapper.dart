@@ -5,9 +5,11 @@ void main() {
   test("createModel", () {
     final userWUsernameWrapper = UserWUsernameWrapper([
       "8fbd97a0-cfc3-11ef-9cd2-0242ac120002",
-      "928dc6a2-d1b3-11ef-9cd2-0242ac120002",
-      DateTime.fromMillisecondsSinceEpoch(1736516582),
-      "Discord",
+      [
+        "928dc6a2-d1b3-11ef-9cd2-0242ac120002",
+        DateTime.fromMillisecondsSinceEpoch(1736516582),
+        "Discord",
+      ],
       "Top1"
     ]);
     final createModel = userWUsernameWrapper.createModel();

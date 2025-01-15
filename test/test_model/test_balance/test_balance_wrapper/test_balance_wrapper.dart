@@ -5,17 +5,21 @@ void main() {
   test("createModel", () {
     final balanceWrapper = BalanceWrapper([
       "7eafdfce-cf58-11ef-9cd2-0242ac120002",
-      "909ef102-cf58-11ef-9cd2-0242ac120002",
-      1,
-      DateTime.fromMillisecondsSinceEpoch(1736516582),
-      DateTime.fromMillisecondsSinceEpoch(1736516582),
+      [
+        "909ef102-cf58-11ef-9cd2-0242ac120002",
+        1,
+        DateTime.fromMillisecondsSinceEpoch(1736516582),
+        DateTime.fromMillisecondsSinceEpoch(1736516582),
+      ],
       3,
       [
         [
           "2aecb1c2-cf59-11ef-9cd2-0242ac120002",
-          "36b12222-cf59-11ef-9cd2-0242ac120002",
-          "Trapper",
-          "assets/icons/dbd/killer/trapper.png",
+          [
+            "36b12222-cf59-11ef-9cd2-0242ac120002",
+            "Trapper",
+            "assets/icons/dbd/killer/trapper.png",
+          ],
           [
             [
               "8c3ece2e-cf59-11ef-9cd2-0242ac120002",
@@ -67,9 +71,11 @@ void main() {
         ],
         [
           "6d38a88e-cf67-11ef-9cd2-0242ac120002",
-          "77ca4f28-cf67-11ef-9cd2-0242ac120002",
-          "Huntress",
-          "assets/icons/dbd/killer/huntress.png",
+          [
+            "77ca4f28-cf67-11ef-9cd2-0242ac120002",
+            "Huntress",
+            "assets/icons/dbd/killer/huntress.png",
+          ],
           [
             [
               "8c3ece2e-cf59-11ef-9cd2-0242ac120002",
@@ -111,9 +117,11 @@ void main() {
         ],
         [
           "81e209ce-cf67-11ef-9cd2-0242ac120002",
-          "85ecb7bc-cf67-11ef-9cd2-0242ac120002",
-          "Hillbilly",
-          "assets/icons/dbd/killer/hillbilly.png",
+          [
+            "85ecb7bc-cf67-11ef-9cd2-0242ac120002",
+            "Hillbilly",
+            "assets/icons/dbd/killer/hillbilly.png",
+          ],
           [
             [
               "8c3ece2e-cf59-11ef-9cd2-0242ac120002",
@@ -160,9 +168,11 @@ void main() {
         ],
         [
           "90039b58-cf67-11ef-9cd2-0242ac120002",
-          "96725308-cf67-11ef-9cd2-0242ac120002",
-          "Cannibal",
-          "assets/icons/dbd/killer/cannibal.png",
+          [
+            "96725308-cf67-11ef-9cd2-0242ac120002",
+            "Cannibal",
+            "assets/icons/dbd/killer/cannibal.png",
+          ],
           [
             [
               "8c3ece2e-cf59-11ef-9cd2-0242ac120002",
@@ -209,9 +219,11 @@ void main() {
         ],
         [
           "9fad722c-cf67-11ef-9cd2-0242ac120002",
-          "a3a50796-cf67-11ef-9cd2-0242ac120002",
-          "Doctor",
-          "assets/icons/dbd/killer/doctor.png",
+          [
+            "a3a50796-cf67-11ef-9cd2-0242ac120002",
+            "Doctor",
+            "assets/icons/dbd/killer/doctor.png",
+          ],
           [
             [
               "8c3ece2e-cf59-11ef-9cd2-0242ac120002",
@@ -253,9 +265,11 @@ void main() {
         ],
         [
           "b582787c-cf67-11ef-9cd2-0242ac120002",
-          "b8e88a06-cf67-11ef-9cd2-0242ac120002",
-          "Wraith",
-          "assets/icons/dbd/killer/wraith.png",
+          [
+            "b8e88a06-cf67-11ef-9cd2-0242ac120002",
+            "Wraith",
+            "assets/icons/dbd/killer/wraith.png",
+          ],
           [
             [
               "8c3ece2e-cf59-11ef-9cd2-0242ac120002",
@@ -307,9 +321,11 @@ void main() {
         ],
         [
           "c05ee992-cf67-11ef-9cd2-0242ac120002",
-          "c3d75bc2-cf67-11ef-9cd2-0242ac120002",
-          "Blight",
-          "assets/icons/dbd/killer/blight.png",
+          [
+            "c3d75bc2-cf67-11ef-9cd2-0242ac120002",
+            "Blight",
+            "assets/icons/dbd/killer/blight.png",
+          ],
           [
             [
               "8c3ece2e-cf59-11ef-9cd2-0242ac120002",

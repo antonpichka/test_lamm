@@ -6,12 +6,16 @@ void main() {
     final searchGameWrapper = SearchGameWrapper([
       "7a4415d8-d27b-11ef-9cd2-0242ac120002",
       DateTime.fromMillisecondsSinceEpoch(1736516582),
-      "8fff3aba-d27b-11ef-9cd2-0242ac120002",
-      DateTime.fromMillisecondsSinceEpoch(1736516582),
-      "Discord",
-      "a020dc28-d27b-11ef-9cd2-0242ac120002",
-      DateTime.fromMillisecondsSinceEpoch(1736516582),
-      "Steam",
+      [
+        "8fff3aba-d27b-11ef-9cd2-0242ac120002",
+        DateTime.fromMillisecondsSinceEpoch(1736516582),
+        "Discord",
+      ],
+      [
+        "a020dc28-d27b-11ef-9cd2-0242ac120002",
+        DateTime.fromMillisecondsSinceEpoch(1736516582),
+        "Steam",
+      ],
       false,
       false,
       false

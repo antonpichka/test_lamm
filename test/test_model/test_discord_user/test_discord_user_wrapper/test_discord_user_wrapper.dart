@@ -5,9 +5,11 @@ void main() {
   test("createModel", () {
     final discordUserWrapper = DiscordUserWrapper([
       "a55cacfa-cf72-11ef-9cd2-0242ac120002",
-      "9913e426-cf6e-11ef-9cd2-0242ac120002",
-      DateTime.fromMillisecondsSinceEpoch(1736516582),
-      "Discord",
+      [
+        "9913e426-cf6e-11ef-9cd2-0242ac120002",
+        DateTime.fromMillisecondsSinceEpoch(1736516582),
+        "Discord",
+      ],
       "152637495245674275",
       "top1",
       "TheTop1"

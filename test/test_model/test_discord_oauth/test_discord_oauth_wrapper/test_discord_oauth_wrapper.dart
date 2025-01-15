@@ -5,9 +5,11 @@ void main() {
   test("createModel", () {
     final discordOAuthWrapper = DiscordOAuthWrapper([
       "8fbd97a0-cfc3-11ef-9cd2-0242ac120002",
-      "56df563a-d02c-11ef-9cd2-0242ac120002",
-      DateTime.fromMillisecondsSinceEpoch(1736516582),
-      "Discord",
+      [
+        "56df563a-d02c-11ef-9cd2-0242ac120002",
+        DateTime.fromMillisecondsSinceEpoch(1736516582),
+        "Discord",
+      ],
       "6qrZcUqja7812RVdnEKjpzOL4CvHBFG",
       "Bearer",
       604800,

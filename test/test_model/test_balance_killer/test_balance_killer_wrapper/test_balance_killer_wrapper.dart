@@ -5,9 +5,11 @@ void main() {
   test("createModel", () {
     final balanceKillerWrapper = BalanceKillerWrapper([
       "2aecb1c2-cf59-11ef-9cd2-0242ac120002",
-      "36b12222-cf59-11ef-9cd2-0242ac120002",
-      "Trapper",
-      "assets/icons/dbd/killer/trapper.png",
+      [
+        "36b12222-cf59-11ef-9cd2-0242ac120002",
+        "Trapper",
+        "assets/icons/dbd/killer/trapper.png",
+      ],
       [
         [
           "8c3ece2e-cf59-11ef-9cd2-0242ac120002",
