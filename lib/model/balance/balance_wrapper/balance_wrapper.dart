@@ -19,23 +19,23 @@ base class BalanceWrapper extends BaseModelWrapper {
   @override
   Balance createModel() {
     final List<BalanceKiller> listBalanceKiller = List.empty(growable: true);
-    for(final List<dynamic> itemObject in listObject[6]) {
+    for(final List<dynamic> itemObject in listObject[3]) {
       final List<Maps> listMaps = List.empty(growable: true);
-      for(final List<dynamic> itemObjectFirst in itemObject[4]) {
+      for(final List<dynamic> itemObjectFirst in itemObject[2]) {
         listMaps.add(Maps(
             itemObjectFirst[0],
             itemObjectFirst[1],
             itemObjectFirst[2]));
       }
       final List<KillerPerk> listKillerPerk = List.empty(growable: true);
-      for(final List<dynamic> itemObjectFirst in itemObject[5]) {
+      for(final List<dynamic> itemObjectFirst in itemObject[3]) {
         listKillerPerk.add(KillerPerk(
             itemObjectFirst[0],
             itemObjectFirst[1],
             itemObjectFirst[2]));
       }
       final List<SurvivorPerk> listSurvivorPerk = List.empty(growable: true);
-      for(final List<dynamic> itemObjectFirst in itemObject[6]) {
+      for(final List<dynamic> itemObjectFirst in itemObject[4]) {
         listSurvivorPerk.add(SurvivorPerk(
             itemObjectFirst[0],
             itemObjectFirst[1],
@@ -44,23 +44,23 @@ base class BalanceWrapper extends BaseModelWrapper {
       listBalanceKiller.add(BalanceKiller(
           itemObject[0],
           Killer(
-              itemObject[1],
-              itemObject[2],
-              itemObject[3]),
+              itemObject[1][0],
+              itemObject[1][1],
+              itemObject[1][2]),
           ListMaps(listMaps),
           ListKillerPerk(listKillerPerk),
           ListSurvivorPerk(listSurvivorPerk),
-          itemObject[7],
-          itemObject[8]));
+          itemObject[5],
+          itemObject[6]));
     }
     return Balance(
         listObject[0],
         Season(
-            listObject[1],
-            listObject[2],
-            listObject[3],
-            listObject[4]),
-        listObject[5],
+            listObject[1][0],
+            listObject[1][1],
+            listObject[1][2],
+            listObject[1][3]),
+        listObject[2],
         ListBalanceKiller(listBalanceKiller));
   }
 }

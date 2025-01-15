@@ -34,23 +34,23 @@ base class GameMatchWrapper extends BaseModelWrapper {
   @override
   GameMatch createModel() {
     final List<BalanceKiller> listBalanceKiller = List.empty(growable: true);
-    for (final List<dynamic> itemObject in listObject[10]) {
+    for (final List<dynamic> itemObject in listObject[4][3]) {
       final List<Maps> listMaps = List.empty(growable: true);
-      for(final List<dynamic> itemObjectFirst in itemObject[4]) {
+      for(final List<dynamic> itemObjectFirst in itemObject[2]) {
         listMaps.add(Maps(
             itemObjectFirst[0],
             itemObjectFirst[1],
             itemObjectFirst[2]));
       }
       final List<KillerPerk> listKillerPerk = List.empty(growable: true);
-      for(final List<dynamic> itemObjectFirst in itemObject[5]) {
+      for(final List<dynamic> itemObjectFirst in itemObject[3]) {
         listKillerPerk.add(KillerPerk(
             itemObjectFirst[0],
             itemObjectFirst[1],
             itemObjectFirst[2]));
       }
       final List<SurvivorPerk> listSurvivorPerk = List.empty(growable: true);
-      for(final List<dynamic> itemObjectFirst in itemObject[6]) {
+      for(final List<dynamic> itemObjectFirst in itemObject[4]) {
         listSurvivorPerk.add(SurvivorPerk(
             itemObjectFirst[0],
             itemObjectFirst[1],
@@ -59,163 +59,163 @@ base class GameMatchWrapper extends BaseModelWrapper {
       listBalanceKiller.add(BalanceKiller(
           itemObject[0],
           Killer(
-              itemObject[1],
-              itemObject[2],
-              itemObject[3]),
+              itemObject[1][0],
+              itemObject[1][1],
+              itemObject[1][2]),
           ListMaps(listMaps),
           ListKillerPerk(listKillerPerk),
           ListSurvivorPerk(listSurvivorPerk),
-          itemObject[7],
-          itemObject[8]));
+          itemObject[5],
+          itemObject[6]));
     }
     final List<BannedKiller> listBannedKiller = List.empty(growable: true);
-    for (final List<dynamic> itemObject in listObject[17]) {
+    for (final List<dynamic> itemObject in listObject[7]) {
       listBannedKiller.add(BannedKiller(
           itemObject[0],
           Killer(
-              itemObject[1],
-              itemObject[2],
-              itemObject[3]),
-          itemObject[4],
+              itemObject[1][0],
+              itemObject[1][1],
+              itemObject[1][2]),
+          itemObject[2],
           User(
-              itemObject[5],
-              itemObject[6],
-              itemObject[7])));
+              itemObject[3][0],
+              itemObject[3][1],
+              itemObject[3][2])));
     }
     final List<PickedKiller> listPickedKiller = List.empty(growable: true);
-    for (final List<dynamic> itemObject in listObject[18]) {
+    for (final List<dynamic> itemObject in listObject[8]) {
       final List<BannedMaps> listBannedMaps = List.empty(growable: true);
-      for (final List<dynamic> itemObjectFirst in itemObject[12]) {
+      for (final List<dynamic> itemObjectFirst in itemObject[5]) {
         listBannedMaps.add(BannedMaps(
             itemObjectFirst[0],
             Maps(
-                itemObjectFirst[1],
-                itemObjectFirst[2],
-                itemObjectFirst[3]),
-            itemObjectFirst[4],
+                itemObjectFirst[1][0],
+                itemObjectFirst[1][1],
+                itemObjectFirst[1][2]),
+            itemObjectFirst[2],
             User(
-                itemObjectFirst[5],
-                itemObjectFirst[6],
-                itemObjectFirst[7])));
+                itemObjectFirst[3][0],
+                itemObjectFirst[3][1],
+                itemObjectFirst[3][2])));
       }
       final List<PickedKillerPerk> listPickedKillerPerk = List.empty(growable: true);
-      for (final List<dynamic> itemObjectFirst in itemObject[13]) {
+      for (final List<dynamic> itemObjectFirst in itemObject[6]) {
         listPickedKillerPerk.add(PickedKillerPerk(
             itemObjectFirst[0],
             KillerPerk(
-                itemObjectFirst[1],
-                itemObjectFirst[2],
-                itemObjectFirst[3]),
+                itemObjectFirst[1][0],
+                itemObjectFirst[1][1],
+                itemObjectFirst[1][2]),
             User(
-                itemObjectFirst[4],
-                itemObjectFirst[5],
-                itemObjectFirst[6])));
+                itemObjectFirst[2][0],
+                itemObjectFirst[2][1],
+                itemObjectFirst[2][2])));
       }
       final List<PickedSurvivorPerk> listPickedSurvivorPerk = List.empty(growable: true);
-      for (final List<dynamic> itemObjectFirst in itemObject[14]) {
+      for (final List<dynamic> itemObjectFirst in itemObject[7]) {
         listPickedSurvivorPerk.add(PickedSurvivorPerk(
             itemObjectFirst[0],
             SurvivorPerk(
-                itemObjectFirst[1],
-                itemObjectFirst[2],
-                itemObjectFirst[3]),
+                itemObjectFirst[1][0],
+                itemObjectFirst[1][1],
+                itemObjectFirst[1][2]),
             User(
-                itemObjectFirst[4],
-                itemObjectFirst[5],
-                itemObjectFirst[6])));
+                itemObjectFirst[2][0],
+                itemObjectFirst[2][1],
+                itemObjectFirst[2][2])));
       }
       listPickedKiller.add(PickedKiller(
           itemObject[0],
           Killer(
-              itemObject[1],
-              itemObject[2],
-              itemObject[3]),
-          itemObject[4],
+              itemObject[1][0],
+              itemObject[1][1],
+              itemObject[1][2]),
+          itemObject[2],
           User(
-              itemObject[5],
-              itemObject[6],
-              itemObject[7]),
+              itemObject[3][0],
+              itemObject[3][1],
+              itemObject[3][2]),
           PickedMaps(
-              itemObject[8],
+              itemObject[4][0],
               Maps(
-                  itemObject[9],
-                  itemObject[10],
-                  itemObject[11])),
+                  itemObject[4][1][0],
+                  itemObject[4][1][1],
+                  itemObject[4][1][2])),
           ListBannedMaps(listBannedMaps),
           ListPickedKillerPerk(listPickedKillerPerk),
           ListPickedSurvivorPerk(listPickedSurvivorPerk)));
     }
     final List<Round> listRound = List.empty(growable: true);
-    for (final List<dynamic> itemObject in listObject[19]) {
+    for (final List<dynamic> itemObject in listObject[9]) {
       final List<BannedMaps> listBannedMaps = List.empty(growable: true);
-      for (final List<dynamic> itemObjectFirst in itemObject[14]) {
+      for (final List<dynamic> itemObjectFirst in itemObject[2][5]) {
         listBannedMaps.add(BannedMaps(
             itemObjectFirst[0],
             Maps(
-                itemObjectFirst[1],
-                itemObjectFirst[2],
-                itemObjectFirst[3]),
-            itemObjectFirst[4],
+                itemObjectFirst[1][0],
+                itemObjectFirst[1][1],
+                itemObjectFirst[1][2]),
+            itemObjectFirst[2],
             User(
-                itemObjectFirst[5],
-                itemObjectFirst[6],
-                itemObjectFirst[7])));
+                itemObjectFirst[3][0],
+                itemObjectFirst[3][1],
+                itemObjectFirst[3][2])));
       }
       final List<PickedKillerPerk> listPickedKillerPerk = List.empty(growable: true);
-      for (final List<dynamic> itemObjectFirst in itemObject[15]) {
+      for (final List<dynamic> itemObjectFirst in itemObject[2][6]) {
         listPickedKillerPerk.add(PickedKillerPerk(
             itemObjectFirst[0],
             KillerPerk(
-                itemObjectFirst[1],
-                itemObjectFirst[2],
-                itemObjectFirst[3]),
+                itemObjectFirst[1][0],
+                itemObjectFirst[1][1],
+                itemObjectFirst[1][2]),
             User(
-                itemObjectFirst[4],
-                itemObjectFirst[5],
-                itemObjectFirst[6])));
+                itemObjectFirst[2][0],
+                itemObjectFirst[2][1],
+                itemObjectFirst[2][2])));
       }
       final List<PickedSurvivorPerk> listPickedSurvivorPerk = List.empty(growable: true);
-      for (final List<dynamic> itemObjectFirst in itemObject[16]) {
+      for (final List<dynamic> itemObjectFirst in itemObject[2][7]) {
         listPickedSurvivorPerk.add(PickedSurvivorPerk(
             itemObjectFirst[0],
             SurvivorPerk(
-                itemObjectFirst[1],
-                itemObjectFirst[2],
-                itemObjectFirst[3]),
+                itemObjectFirst[1][0],
+                itemObjectFirst[1][1],
+                itemObjectFirst[1][2]),
             User(
-                itemObjectFirst[4],
-                itemObjectFirst[5],
-                itemObjectFirst[6])));
+                itemObjectFirst[2][0],
+                itemObjectFirst[2][1],
+                itemObjectFirst[2][2])));
       }
       listRound.add(Round(
           itemObject[0],
           itemObject[1],
           PickedKiller(
-              itemObject[2],
+              itemObject[2][0],
               Killer(
-                  itemObject[3],
-                  itemObject[4],
-                  itemObject[5]),
-              itemObject[6],
+                  itemObject[2][1][0],
+                  itemObject[2][1][1],
+                  itemObject[2][1][2]),
+              itemObject[2][2],
               User(
-                  itemObject[7],
-                  itemObject[8],
-                  itemObject[9]),
+                  itemObject[2][3][0],
+                  itemObject[2][3][1],
+                  itemObject[2][3][2]),
               PickedMaps(
-                  itemObject[10],
+                  itemObject[2][4][0],
                   Maps(
-                      itemObject[11],
-                      itemObject[12],
-                      itemObject[13])),
+                      itemObject[2][4][1][0],
+                      itemObject[2][4][1][1],
+                      itemObject[2][4][1][2])),
               ListBannedMaps(listBannedMaps),
               ListPickedKillerPerk(listPickedKillerPerk),
               ListPickedSurvivorPerk(listPickedSurvivorPerk)),
-          itemObject[17],
-          itemObject[18],
-          itemObject[19],
-          itemObject[20],
-          itemObject[21],
-          itemObject[22]));
+          itemObject[3],
+          itemObject[4],
+          itemObject[5],
+          itemObject[6],
+          itemObject[7],
+          itemObject[8]));
     }
     return GameMatch(
         listObject[0],
@@ -223,29 +223,29 @@ base class GameMatchWrapper extends BaseModelWrapper {
         listObject[2],
         listObject[3],
         Balance(
-            listObject[4],
+            listObject[4][0],
             Season(
-                listObject[5],
-                listObject[6],
-                listObject[7],
-                listObject[8]),
-            listObject[9],
+                listObject[4][1][0],
+                listObject[4][1][1],
+                listObject[4][1][2],
+                listObject[4][1][3]),
+            listObject[4][2],
             ListBalanceKiller(listBalanceKiller)
         ),
         User(
-            listObject[11],
-            listObject[12],
-            listObject[13]),
+            listObject[5][0],
+            listObject[5][1],
+            listObject[5][2]),
         User(
-            listObject[14],
-            listObject[15],
-            listObject[16]),
+            listObject[6][0],
+            listObject[6][1],
+            listObject[6][2]),
         ListBannedKiller(listBannedKiller),
         ListPickedKiller(listPickedKiller),
         ListRound(listRound),
-        listObject[20],
-        listObject[21],
-        listObject[22],
-        listObject[23]);
+        listObject[10],
+        listObject[11],
+        listObject[12],
+        listObject[13]);
   }
 }

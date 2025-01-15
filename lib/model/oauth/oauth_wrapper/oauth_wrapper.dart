@@ -12,11 +12,11 @@ base class OAuthWrapper extends BaseModelWrapper {
     return OAuth(
         listObject[0],
         User(
-            listObject[1],
-            listObject[2],
-            listObject[3]),
-        listObject[4],
-        listObject[5],
-        listObject[6]);
+            listObject[1][0],
+            listObject[1][1],
+            listObject[1][2]),
+        listObject[2],
+        listObject[3],
+        listObject[4]);
   }
 }

@@ -12,8 +12,8 @@ base class PickedMapsWrapper extends BaseModelWrapper {
     return PickedMaps(
         listObject[0],
         Maps(
-            listObject[1],
-            listObject[2],
-            listObject[3]));
+            listObject[1][0],
+            listObject[1][1],
+            listObject[1][2]));
   }
 }

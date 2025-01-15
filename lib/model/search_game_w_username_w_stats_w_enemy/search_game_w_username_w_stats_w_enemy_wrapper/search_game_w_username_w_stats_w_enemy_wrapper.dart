@@ -14,33 +14,33 @@ base class SearchGameWUsernameWStatsWEnemyWrapper extends BaseModelWrapper {
   SearchGameWUsernameWStatsWEnemy createModel() {
     return SearchGameWUsernameWStatsWEnemy(
         SearchGame(
-            listObject[0],
-            listObject[1],
+            listObject[0][0],
+            listObject[0][1],
             User(
-                listObject[2],
-                listObject[3],
-                listObject[4]),
+                listObject[0][2][0],
+                listObject[0][2][1],
+                listObject[0][2][2]),
             User(
-                listObject[5],
-                listObject[6],
-                listObject[7]),
-            listObject[8],
-            listObject[9],
-            listObject[10]),
-        listObject[11],
+                listObject[0][3][0],
+                listObject[0][3][1],
+                listObject[0][3][2]),
+            listObject[0][4],
+            listObject[0][5],
+            listObject[0][6]),
+        listObject[1],
         Stats(
-            listObject[12],
+            listObject[2][0],
             User(
-                listObject[13],
-                listObject[14],
-                listObject[15]),
+                listObject[2][1][0],
+                listObject[2][1][1],
+                listObject[2][1][2]),
             Season(
-                listObject[16],
-                listObject[17],
-                listObject[18],
-                listObject[19]),
-            listObject[20],
-            listObject[21],
-            listObject[22]));
+                listObject[2][2][0],
+                listObject[2][2][1],
+                listObject[2][2][2],
+                listObject[2][2][3]),
+            listObject[2][3],
+            listObject[2][4],
+            listObject[2][5]));
   }
 }

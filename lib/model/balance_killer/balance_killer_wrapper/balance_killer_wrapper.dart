@@ -16,21 +16,21 @@ base class BalanceKillerWrapper extends BaseModelWrapper {
   @override
   BalanceKiller createModel() {
     final List<Maps> listMaps = List.empty(growable: true);
-    for(final List<dynamic> itemObject in listObject[4]) {
+    for(final List<dynamic> itemObject in listObject[2]) {
       listMaps.add(Maps(
           itemObject[0],
           itemObject[1],
           itemObject[2]));
     }
     final List<KillerPerk> listKillerPerk = List.empty(growable: true);
-    for(final List<dynamic> itemObject in listObject[5]) {
+    for(final List<dynamic> itemObject in listObject[3]) {
       listKillerPerk.add(KillerPerk(
           itemObject[0],
           itemObject[1],
           itemObject[2]));
     }
     final List<SurvivorPerk> listSurvivorPerk = List.empty(growable: true);
-    for(final List<dynamic> itemObject in listObject[6]) {
+    for(final List<dynamic> itemObject in listObject[4]) {
       listSurvivorPerk.add(SurvivorPerk(
           itemObject[0],
           itemObject[1],
@@ -39,13 +39,13 @@ base class BalanceKillerWrapper extends BaseModelWrapper {
     return BalanceKiller(
         listObject[0],
         Killer(
-            listObject[1],
-            listObject[2],
-            listObject[3]),
+            listObject[1][0],
+            listObject[1][1],
+            listObject[1][2]),
         ListMaps(listMaps),
         ListKillerPerk(listKillerPerk),
         ListSurvivorPerk(listSurvivorPerk),
-        listObject[7],
-        listObject[8]);
+        listObject[5],
+        listObject[6]);
   }
 }

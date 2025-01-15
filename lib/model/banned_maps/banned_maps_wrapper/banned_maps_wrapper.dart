@@ -13,13 +13,13 @@ base class BannedMapsWrapper extends BaseModelWrapper {
     return BannedMaps(
         listObject[0],
         Maps(
-            listObject[1],
-            listObject[2],
-            listObject[3]),
-        listObject[4],
+            listObject[1][0],
+            listObject[1][1],
+            listObject[1][2]),
+        listObject[2],
         User(
-            listObject[5],
-            listObject[6],
-            listObject[7]));
+            listObject[3][0],
+            listObject[3][1],
+            listObject[3][2]));
   }
 }

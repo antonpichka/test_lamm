@@ -13,15 +13,15 @@ base class SearchGameWrapper extends BaseModelWrapper {
         listObject[0],
         listObject[1],
         User(
-            listObject[2],
-            listObject[3],
-            listObject[4]),
+            listObject[2][0],
+            listObject[2][1],
+            listObject[2][2]),
         User(
-            listObject[5],
-            listObject[6],
-            listObject[7]),
-        listObject[8],
-        listObject[9],
-        listObject[10]);
+            listObject[3][0],
+            listObject[3][1],
+            listObject[3][2]),
+        listObject[4],
+        listObject[5],
+        listObject[6]);
   }
 }

@@ -13,16 +13,16 @@ base class StatsWrapper extends BaseModelWrapper {
     return Stats(
         listObject[0],
         User(
-            listObject[1],
-            listObject[2],
-            listObject[3]),
+            listObject[1][0],
+            listObject[1][1],
+            listObject[1][2]),
         Season(
-            listObject[4],
-            listObject[5],
-            listObject[6],
-            listObject[7]),
-        listObject[8],
-        listObject[9],
-        listObject[10]);
+            listObject[2][0],
+            listObject[2][1],
+            listObject[2][2],
+            listObject[2][3]),
+        listObject[3],
+        listObject[4],
+        listObject[5]);
   }
 }

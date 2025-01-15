@@ -22,73 +22,73 @@ base class RoundWrapper extends BaseModelWrapper {
   @override
   Round createModel() {
     final List<BannedMaps> listBannedMaps = List.empty(growable: true);
-    for (final List<dynamic> itemObject in listObject[14]) {
+    for (final List<dynamic> itemObject in listObject[2][5]) {
       listBannedMaps.add(BannedMaps(
           itemObject[0],
           Maps(
-              itemObject[1],
-              itemObject[2],
-              itemObject[3]),
-          itemObject[4],
+              itemObject[1][0],
+              itemObject[1][1],
+              itemObject[1][2]),
+          itemObject[2],
           User(
-              itemObject[5],
-              itemObject[6],
-              itemObject[7])));
+              itemObject[3][0],
+              itemObject[3][1],
+              itemObject[3][2])));
     }
     final List<PickedKillerPerk> listPickedKillerPerk = List.empty(growable: true);
-    for (final List<dynamic> itemObject in listObject[15]) {
+    for (final List<dynamic> itemObject in listObject[2][6]) {
       listPickedKillerPerk.add(PickedKillerPerk(
           itemObject[0],
           KillerPerk(
-              itemObject[1],
-              itemObject[2],
-              itemObject[3]),
+              itemObject[1][0],
+              itemObject[1][1],
+              itemObject[1][2]),
           User(
-              itemObject[4],
-              itemObject[5],
-              itemObject[6])));
+              itemObject[2][0],
+              itemObject[2][1],
+              itemObject[2][2])));
     }
     final List<PickedSurvivorPerk> listPickedSurvivorPerk = List.empty(growable: true);
-    for (final List<dynamic> itemObject in listObject[16]) {
+    for (final List<dynamic> itemObject in listObject[2][7]) {
       listPickedSurvivorPerk.add(PickedSurvivorPerk(
           itemObject[0],
           SurvivorPerk(
-              itemObject[1],
-              itemObject[2],
-              itemObject[3]),
+              itemObject[1][0],
+              itemObject[1][1],
+              itemObject[1][2]),
           User(
-              itemObject[4],
-              itemObject[5],
-              itemObject[6])));
+              itemObject[2][0],
+              itemObject[2][1],
+              itemObject[2][2])));
     }
     return Round(
         listObject[0],
         listObject[1],
         PickedKiller(
-            listObject[2],
+            listObject[2][0],
             Killer(
-                listObject[3],
-                listObject[4],
-                listObject[5]),
-            listObject[6],
+                listObject[2][1][0],
+                listObject[2][1][1],
+                listObject[2][1][2]),
+            listObject[2][2],
             User(
-                listObject[7],
-                listObject[8],
-                listObject[9]),
+                listObject[2][3][0],
+                listObject[2][3][1],
+                listObject[2][3][2]),
             PickedMaps(
-                listObject[10],
+                listObject[2][4][0],
                 Maps(
-                    listObject[11],
-                    listObject[12],
-                    listObject[13])),
+                    listObject[2][4][1][0],
+                    listObject[2][4][1][1],
+                    listObject[2][4][1][2])),
             ListBannedMaps(listBannedMaps),
             ListPickedKillerPerk(listPickedKillerPerk),
             ListPickedSurvivorPerk(listPickedSurvivorPerk)),
-        listObject[17],
-        listObject[18],
-        listObject[19],
-        listObject[20],
-        listObject[21],
-        listObject[22]);
+        listObject[3],
+        listObject[4],
+        listObject[5],
+        listObject[6],
+        listObject[7],
+        listObject[8]);
   }
 }

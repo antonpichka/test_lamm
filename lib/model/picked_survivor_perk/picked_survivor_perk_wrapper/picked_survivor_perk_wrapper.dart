@@ -13,12 +13,12 @@ base class PickedSurvivorPerkWrapper extends BaseModelWrapper {
     return PickedSurvivorPerk(
         listObject[0],
         SurvivorPerk(
-            listObject[1],
-            listObject[2],
-            listObject[3]),
+            listObject[1][0],
+            listObject[1][1],
+            listObject[1][2]),
         User(
-            listObject[4],
-            listObject[5],
-            listObject[6]));
+            listObject[2][0],
+            listObject[2][1],
+            listObject[2][2]));
   }
 }

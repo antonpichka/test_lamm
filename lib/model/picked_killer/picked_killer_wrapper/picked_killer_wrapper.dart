@@ -21,62 +21,62 @@ base class PickedKillerWrapper extends BaseModelWrapper {
   @override
   PickedKiller createModel() {
     final List<BannedMaps> listBannedMaps = List.empty(growable: true);
-    for (final List<dynamic> itemObject in listObject[12]) {
+    for (final List<dynamic> itemObject in listObject[5]) {
       listBannedMaps.add(BannedMaps(
           itemObject[0],
           Maps(
-              itemObject[1],
-              itemObject[2],
-              itemObject[3]),
-          itemObject[4],
+              itemObject[1][0],
+              itemObject[1][1],
+              itemObject[1][2]),
+          itemObject[2],
           User(
-              itemObject[5],
-              itemObject[6],
-              itemObject[7])));
+              itemObject[3][0],
+              itemObject[3][1],
+              itemObject[3][2])));
     }
     final List<PickedKillerPerk> listPickedKillerPerk = List.empty(growable: true);
-    for (final List<dynamic> itemObject in listObject[13]) {
+    for (final List<dynamic> itemObject in listObject[6]) {
       listPickedKillerPerk.add(PickedKillerPerk(
           itemObject[0],
           KillerPerk(
-              itemObject[1],
-              itemObject[2],
-              itemObject[3]),
+              itemObject[1][0],
+              itemObject[1][1],
+              itemObject[1][2]),
           User(
-              itemObject[4],
-              itemObject[5],
-              itemObject[6])));
+              itemObject[2][0],
+              itemObject[2][1],
+              itemObject[2][2])));
     }
     final List<PickedSurvivorPerk> listPickedSurvivorPerk = List.empty(growable: true);
-    for (final List<dynamic> itemObject in listObject[14]) {
+    for (final List<dynamic> itemObject in listObject[7]) {
       listPickedSurvivorPerk.add(PickedSurvivorPerk(
           itemObject[0],
           SurvivorPerk(
-              itemObject[1],
-              itemObject[2],
-              itemObject[3]),
+              itemObject[1][0],
+              itemObject[1][1],
+              itemObject[1][2]),
           User(
-              itemObject[4],
-              itemObject[5],
-              itemObject[6])));
+              itemObject[2][0],
+              itemObject[2][1],
+              itemObject[2][2])));
     }
     return PickedKiller(
         listObject[0],
         Killer(
-            listObject[1],
-            listObject[2],
-            listObject[3]),
-        listObject[4],
+            listObject[1][0],
+            listObject[1][1],
+            listObject[1][2]),
+        listObject[2],
         User(
-            listObject[5],
-            listObject[6],
-            listObject[7]),
+            listObject[3][0],
+            listObject[3][1],
+            listObject[3][2]),
         PickedMaps(
-            listObject[8],
+            listObject[4][0],
             Maps(
-                listObject[9],
-                listObject[10],
-                listObject[11])),
+                listObject[4][1][0],
+                listObject[4][1][1],
+                listObject[4][1][2])),
         ListBannedMaps(listBannedMaps),
         ListPickedKillerPerk(listPickedKillerPerk),
         ListPickedSurvivorPerk(listPickedSurvivorPerk));
