@@ -5,6 +5,7 @@ import 'package:test_lamm/model/user_w_username/user_w_username.dart';
 import 'package:test_lamm/named_utility/algorithms_utility.dart';
 import 'package:test_lamm/named_utility/enum_routers_utility.dart';
 import 'package:test_lamm/named_utility/keys_temp_cache_provider_utility.dart';
+import 'package:test_lamm/named_vm/game_match_vm/game_match_vm.dart';
 import 'package:test_lamm/named_vm/login_vm/login_vm.dart';
 import 'package:test_lamm/named_vm/main_vm/main_vm.dart';
 import 'package:test_lamm/named_vm/routers_vm/data_for_routers_vm.dart';
@@ -62,8 +63,8 @@ final class RoutersVM {
         SearchGameVM(dataWNamed.token,dataWNamed.userWUsername);
         break;
       case EnumDataForRoutersVM.gameMatchVM:
-        // TODO: Handle this case.
-        throw UnimplementedError();
+        GameMatchVM(dataWNamed.token,dataWNamed.userWUsername);
+        break;
       case EnumDataForRoutersVM.mainVM:
         MainVM(dataWNamed.token,dataWNamed.userWUsername);
         break;
