@@ -44,6 +44,10 @@ final class AlgorithmsUtility {
         listPoints[Random().nextInt(500)]);
   }
 
+  static bool getBoolWhereGenerated() {
+    return Random().nextInt(2) == 0 ? true : false;
+  }
+
   static void debugPrintWhereConsoleFromThisClassAndText(Object thisClass, String text) {
     debugPrint("\n${thisClass.runtimeType} - Build: $text");
   }

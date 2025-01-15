@@ -8,6 +8,8 @@ final class KeysTempCacheProviderUtility {
   static const String enumRoutersUtility = "enumRoutersUtility";
   /* Stats */
   static const String stats = "stats";
+  /* GameMatchWUsername */
+  static const String gameMatchWUsername = "gameMatchWUsername";
 
   const KeysTempCacheProviderUtility._();
 }
