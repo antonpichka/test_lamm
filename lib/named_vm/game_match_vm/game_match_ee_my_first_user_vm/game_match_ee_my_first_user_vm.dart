@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'package:library_architecture_mvvm_modify/library_architecture_mvvm_modify.dart' as lamm;
 import 'package:test_lamm/model/game_match/game_match.dart';
 import 'package:test_lamm/model/token/token.dart';
@@ -44,8 +45,60 @@ final class GameMatchEEMyFirstUserVM {
       case EnumDataForGameMatchEEMyFirstUserVM.exception:
         AlgorithmsUtility.debugPrintWhereConsoleFromThisClassAndText(this, "Exception(${dataWNamed.exceptionController.getKeyParameterException})");
         break;
-      case EnumDataForGameMatchEEMyFirstUserVM.first:
-        AlgorithmsUtility.debugPrintWhereConsoleFromThisClassAndText(this, "First");
+      case EnumDataForGameMatchEEMyFirstUserVM.myTurnToBanTheKillerMaps:
+        // TODO: Handle this case.
+        throw UnimplementedError();
+      case EnumDataForGameMatchEEMyFirstUserVM.enemyTurnToBanTheKillerMaps:
+        // TODO: Handle this case.
+        throw UnimplementedError();
+      case EnumDataForGameMatchEEMyFirstUserVM.systemTurnToPickTheKillerMaps:
+        // TODO: Handle this case.
+        throw UnimplementedError();
+      case EnumDataForGameMatchEEMyFirstUserVM.myTurnToPickTheKillerPerks:
+        // TODO: Handle this case.
+        throw UnimplementedError();
+      case EnumDataForGameMatchEEMyFirstUserVM.enemyTurnToPickTheKillerPerks:
+        // TODO: Handle this case.
+        throw UnimplementedError();
+      case EnumDataForGameMatchEEMyFirstUserVM.systemTurnToPickTheKillerPerks:
+        // TODO: Handle this case.
+        throw UnimplementedError();
+      case EnumDataForGameMatchEEMyFirstUserVM.myTurnToPickTheSurvivorPerks:
+        // TODO: Handle this case.
+        throw UnimplementedError();
+      case EnumDataForGameMatchEEMyFirstUserVM.enemyTurnToPickTheSurvivorPerks:
+        // TODO: Handle this case.
+        throw UnimplementedError();
+      case EnumDataForGameMatchEEMyFirstUserVM.systemTurnToPickTheSurvivorPerks:
+        // TODO: Handle this case.
+        throw UnimplementedError();
+      case EnumDataForGameMatchEEMyFirstUserVM.myTurnToBanTheKillerInTheFirstStage:
+        AlgorithmsUtility.debugPrintWhereConsoleFromThisClassAndText(this, "MyTurnToBanTheKillerInTheFirstStage(${dataWNamed.getFormattedActionLogParameterGameMatch}\n${dataWNamed.gameMatch.getStringWhereShowBannedKillersAndThoseWhoAreNotBannedYet}\nInput (Index): )");
+        final input = stdin.readLineSync();
+        final numberWhereStrConvertedWZeroFromInput = AlgorithmsUtility.getNumberWhereStrConvertedWZeroFromInput(input);
+        _myTurnToBanTheKillerInTheFirstStage(numberWhereStrConvertedWZeroFromInput);
+        break;
+      case EnumDataForGameMatchEEMyFirstUserVM.enemyTurnToBanTheKillerInTheFirstStage:
+        AlgorithmsUtility.debugPrintWhereConsoleFromThisClassAndText(this, "EnemyTurnToBanTheKillerInTheFirstStage(${dataWNamed.getFormattedActionLogParameterGameMatch}\n${dataWNamed.gameMatch.getStringWhereShowBannedKillersAndThoseWhoAreNotBannedYet}\nIndex: 0)");
+        _enemyTurnToBanTheKillerInTheFirstStage(0);
+        break;
+      case EnumDataForGameMatchEEMyFirstUserVM.myTurnToPickTheKillerInTheFirstStage:
+        // TODO: Handle this case.
+        throw UnimplementedError();
+      case EnumDataForGameMatchEEMyFirstUserVM.enemyTurnToPickTheKillerInTheFirstStage:
+        // TODO: Handle this case.
+        throw UnimplementedError();
+      case EnumDataForGameMatchEEMyFirstUserVM.myTurnToBanTheKillerInTheSecondStage:
+        // TODO: Handle this case.
+        throw UnimplementedError();
+      case EnumDataForGameMatchEEMyFirstUserVM.enemyTurnToBanTheKillerInTheSecondStage:
+        // TODO: Handle this case.
+        throw UnimplementedError();
+      case EnumDataForGameMatchEEMyFirstUserVM.systemTurnToPickTheKillerInTheSecondStage:
+        // TODO: Handle this case.
+        throw UnimplementedError();
+      case EnumDataForGameMatchEEMyFirstUserVM.completed:
+        AlgorithmsUtility.debugPrintWhereConsoleFromThisClassAndText(this, "Completed(${dataWNamed.gameMatch})");
         break;
     }
   }
@@ -54,5 +107,65 @@ final class GameMatchEEMyFirstUserVM {
     _namedStreamWState
         .getDataForNamed
         .isLoading = false;
+  }
+
+  void _myTurnToBanTheKillerInTheFirstStage(int index) {
+    final username = _namedStreamWState
+        .getDataForNamed
+        .userWUsername
+        .username;
+    final gameMatch = _namedStreamWState
+        .getDataForNamed
+        .gameMatch;
+    gameMatch.insertBannedKillerFromIndexParametersListBannedKillerAndFirstUser(index);
+    final newGameMatch = GameMatch(
+        gameMatch.uniqueId,
+        gameMatch.creationAt,
+        gameMatch.isCompleted,
+        "${gameMatch.actionLog}\n'${gameMatch.firstUser}($username)': banned killer '${gameMatch.listBannedKiller.listModel.last}'",
+        gameMatch.balance.clone(),
+        gameMatch.firstUser.clone(),
+        gameMatch.secondUser.clone(),
+        gameMatch.listBannedKiller.clone(),
+        gameMatch.listPickedKiller.clone(),
+        gameMatch.listRound.clone(),
+        gameMatch.pointsByStatsWFirstUser,
+        gameMatch.pointsByStatsWSecondUser,
+        gameMatch.pointsPerGameMatchWFirstUser,
+        gameMatch.pointsPerGameMatchWSecondUser);
+    _namedStreamWState
+        .getDataForNamed
+        .gameMatch = newGameMatch;
+    _namedStreamWState.notifyStreamDataForNamed();
+  }
+
+  Future<void> _enemyTurnToBanTheKillerInTheFirstStage(int index) async {
+    await Future.delayed(Duration(seconds: 1));
+    final usernameWSecondUser = _namedStreamWState
+        .getDataForNamed
+        .usernameWSecondUser;
+    final gameMatch = _namedStreamWState
+        .getDataForNamed
+        .gameMatch;
+    gameMatch.insertBannedKillerFromIndexParametersListBannedKillerAndSecondUser(index);
+    final newGameMatch = GameMatch(
+        gameMatch.uniqueId,
+        gameMatch.creationAt,
+        gameMatch.isCompleted,
+        "${gameMatch.actionLog}\n'${gameMatch.secondUser}($usernameWSecondUser)': banned killer '${gameMatch.listBannedKiller.listModel.last}'",
+        gameMatch.balance.clone(),
+        gameMatch.firstUser.clone(),
+        gameMatch.secondUser.clone(),
+        gameMatch.listBannedKiller.clone(),
+        gameMatch.listPickedKiller.clone(),
+        gameMatch.listRound.clone(),
+        gameMatch.pointsByStatsWFirstUser,
+        gameMatch.pointsByStatsWSecondUser,
+        gameMatch.pointsPerGameMatchWFirstUser,
+        gameMatch.pointsPerGameMatchWSecondUser);
+    _namedStreamWState
+        .getDataForNamed
+        .gameMatch = newGameMatch;
+    _namedStreamWState.notifyStreamDataForNamed();
   }
 }

@@ -20,7 +20,32 @@ final class DataForGameMatchEEMyFirstUserVM extends BaseDataForNamed<EnumDataFor
     if(exceptionController.isWhereNotEqualsNullParameterException()) {
       return EnumDataForGameMatchEEMyFirstUserVM.exception;
     }
-    return EnumDataForGameMatchEEMyFirstUserVM.first;
+    if(gameMatch.isWhereFirstStageOfTheBanOnKillersItsTheFirstUserTurnParametersThree()) {
+      return EnumDataForGameMatchEEMyFirstUserVM.myTurnToBanTheKillerInTheFirstStage;
+    }
+    if(gameMatch.isWhereFirstStageOfTheBanOnKillersItsTheSecondUserTurnParametersThree()) {
+      return EnumDataForGameMatchEEMyFirstUserVM.enemyTurnToBanTheKillerInTheFirstStage;
+    }
+    if(gameMatch.isWhereFirstStageOfThePickOnKillersItsTheFirstUserTurnParametersThree()) {
+      return EnumDataForGameMatchEEMyFirstUserVM.myTurnToPickTheKillerInTheFirstStage;
+    }
+    if(gameMatch.isWhereFirstStageOfThePickOnKillersItsTheSecondUserTurnParametersThree()) {
+      return EnumDataForGameMatchEEMyFirstUserVM.enemyTurnToPickTheKillerInTheFirstStage;
+    }
+    if(gameMatch.isWhereSecondStageOfTheBanOnKillersItsTheFirstUserTurnParametersThree()) {
+      return EnumDataForGameMatchEEMyFirstUserVM.myTurnToBanTheKillerInTheSecondStage;
+    }
+    if(gameMatch.isWhereSecondStageOfTheBanOnKillersItsTheSecondUserTurnParametersThree()) {
+      return EnumDataForGameMatchEEMyFirstUserVM.enemyTurnToBanTheKillerInTheSecondStage;
+    }
+    if(gameMatch.isWhereSecondStageOfThePickedKillersIsNotCompletedParametersThree()) {
+      return EnumDataForGameMatchEEMyFirstUserVM.systemTurnToPickTheKillerInTheSecondStage;
+    }
+    return EnumDataForGameMatchEEMyFirstUserVM.completed;
+  }
+
+  String get getFormattedActionLogParameterGameMatch {
+    return "\n<-------ACTION LOG------->${gameMatch.actionLog}\n<-------ACTION LOG------->";
   }
 
   @override
