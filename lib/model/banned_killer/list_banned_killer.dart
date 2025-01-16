@@ -23,4 +23,36 @@ base class ListBannedKiller<T extends BannedKiller> extends BaseListModel<T> {
     }
     return "ListBannedKiller(listModel: [$strListModel])";
   }
+
+  ListBannedKiller getListBannedKillerFromUniqueIdByUserParameterListModel(String uniqueIdByUser) {
+    final ListBannedKiller listBannedKiller = ListBannedKiller(List.empty(growable: true));
+    for(final T itemModel in listModel) {
+      if(itemModel.user.uniqueId != uniqueIdByUser) {
+        continue;
+      }
+      listBannedKiller.insertFromNewModelParameterListModel(itemModel.clone());
+    }
+    return listBannedKiller;
+  }
+
+  int getNumberOfBannedKillersFromUniqueIdByUserParameterListModel(String uniqueIdByUser) {
+    int iteration = 0;
+    for(final T itemModel in listModel) {
+      if(itemModel.user.uniqueId != uniqueIdByUser) {
+        continue;
+      }
+      iteration++;
+    }
+    return iteration;
+  }
+
+  bool isWhereNumberOfBannedKillersLessWEqualFromUniqueIdByFirstUserAndUniqueIdBySecondUser(String uniqueIdByFirstUser, String uniqueIdBySecondUser) {
+    return getNumberOfBannedKillersFromUniqueIdByUserParameterListModel(uniqueIdByFirstUser)
+        <= getNumberOfBannedKillersFromUniqueIdByUserParameterListModel(uniqueIdBySecondUser);
+  }
+
+  bool isWhereNumberOfBannedKillersMoreFromUniqueIdByFirstUserAndUniqueIdBySecondUser(String uniqueIdByFirstUser, String uniqueIdBySecondUser) {
+    return getNumberOfBannedKillersFromUniqueIdByUserParameterListModel(uniqueIdByFirstUser)
+        > getNumberOfBannedKillersFromUniqueIdByUserParameterListModel(uniqueIdBySecondUser);
+  }
 }

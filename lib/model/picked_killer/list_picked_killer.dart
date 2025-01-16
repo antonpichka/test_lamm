@@ -23,4 +23,25 @@ base class ListPickedKiller<T extends PickedKiller> extends BaseListModel<T> {
     }
     return "ListPickedKiller(listModel: [$strListModel])";
   }
+
+  int getNumberOfPickedKillersFromUniqueIdByUserParameterListModel(String uniqueIdByUser) {
+    int iteration = 0;
+    for(final T itemModel in listModel) {
+      if(itemModel.user.uniqueId != uniqueIdByUser) {
+        continue;
+      }
+      iteration++;
+    }
+    return iteration;
+  }
+
+  bool isWhereNumberOfPickedKillersLessWEqualFromUniqueIdByFirstUserAndUniqueIdBySecondUser(String uniqueIdByFirstUser, String uniqueIdBySecondUser) {
+    return getNumberOfPickedKillersFromUniqueIdByUserParameterListModel(uniqueIdByFirstUser)
+        <= getNumberOfPickedKillersFromUniqueIdByUserParameterListModel(uniqueIdBySecondUser);
+  }
+
+  bool isWhereNumberOfPickedKillersMoreFromUniqueIdByFirstUserAndUniqueIdBySecondUser(String uniqueIdByFirstUser, String uniqueIdBySecondUser) {
+    return getNumberOfPickedKillersFromUniqueIdByUserParameterListModel(uniqueIdByFirstUser)
+        > getNumberOfPickedKillersFromUniqueIdByUserParameterListModel(uniqueIdBySecondUser);
+  }
 }

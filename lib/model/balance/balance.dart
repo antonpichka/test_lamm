@@ -2,6 +2,7 @@ import 'package:library_architecture_mvvm_modify/library_architecture_mvvm_modif
 import 'package:meta/meta.dart';
 import 'package:test_lamm/model/balance_killer/list_balance_killer.dart';
 import 'package:test_lamm/model/season/season.dart';
+import 'package:test_lamm/named_utility/algorithms_utility.dart';
 
 @immutable
 base class Balance extends BaseModel {
@@ -20,4 +21,14 @@ base class Balance extends BaseModel {
   String toString() {
     return "Balance(uniqueId: $uniqueId, season: $season, numberOfRounds: $numberOfRounds, listBalanceKiller: $listBalanceKiller)";
   }
+
+  int get getNumberOfAllKillersThatNeedToBeBannedParametersListBalanceKillerAndNumberOfRounds {
+    return listBalanceKiller.listModel.length - numberOfRounds;
+  }
+
+  int get getNumberOfAllKillersThatNeedToBeBannedInTheFirstStageWhereUsedInterestFormula {
+    return AlgorithmsUtility.getInterestFormulaFromNumberAndFindPercent(getNumberOfAllKillersThatNeedToBeBannedParametersListBalanceKillerAndNumberOfRounds, 50);
+  }
+
+
 }
