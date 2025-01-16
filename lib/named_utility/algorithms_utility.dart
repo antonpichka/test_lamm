@@ -48,6 +48,10 @@ final class AlgorithmsUtility {
     return Random().nextInt(2) == 0 ? true : false;
   }
 
+  static int getInterestFormulaFromNumberAndFindPercent(int number, int findPercent) {
+    return ((number / 100) * findPercent).toInt();
+  }
+
   static void debugPrintWhereConsoleFromThisClassAndText(Object thisClass, String text) {
     debugPrint("\n${thisClass.runtimeType} - Build: $text");
   }
