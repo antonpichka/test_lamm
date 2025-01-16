@@ -118,7 +118,7 @@ final class GameMatchEEMyFirstUserVM {
         .getDataForNamed
         .gameMatch;
     gameMatch.insertBannedKillerFromIndexParametersListBannedKillerAndFirstUser(index);
-    final newGameMatch = GameMatch(
+    final gameMatchFirst = GameMatch(
         gameMatch.uniqueId,
         gameMatch.creationAt,
         gameMatch.isCompleted,
@@ -135,7 +135,7 @@ final class GameMatchEEMyFirstUserVM {
         gameMatch.pointsPerGameMatchWSecondUser);
     _namedStreamWState
         .getDataForNamed
-        .gameMatch = newGameMatch;
+        .gameMatch = gameMatchFirst;
     _namedStreamWState.notifyStreamDataForNamed();
   }
 
@@ -148,7 +148,7 @@ final class GameMatchEEMyFirstUserVM {
         .getDataForNamed
         .gameMatch;
     gameMatch.insertBannedKillerFromIndexParametersListBannedKillerAndSecondUser(index);
-    final newGameMatch = GameMatch(
+    final gameMatchFirst = GameMatch(
         gameMatch.uniqueId,
         gameMatch.creationAt,
         gameMatch.isCompleted,
@@ -165,7 +165,7 @@ final class GameMatchEEMyFirstUserVM {
         gameMatch.pointsPerGameMatchWSecondUser);
     _namedStreamWState
         .getDataForNamed
-        .gameMatch = newGameMatch;
+        .gameMatch = gameMatchFirst;
     _namedStreamWState.notifyStreamDataForNamed();
   }
 }
