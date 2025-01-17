@@ -20,6 +20,74 @@ final class DataForGameMatchEEMyFirstUserVM extends BaseDataForNamed<EnumDataFor
     if(exceptionController.isWhereNotEqualsNullParameterException()) {
       return EnumDataForGameMatchEEMyFirstUserVM.exception;
     }
+
+    if(gameMatch.isWhereThisIsLastPickedKillerFirstUserAndBanTheKillersMapsWIsTheFirstUserTurnParametersFour()) {
+      return EnumDataForGameMatchEEMyFirstUserVM.thisIsMyPickedKillerWMyTurnToBanTheKillersMaps;
+    }
+    if(gameMatch.isWhereThisIsLastPickedKillerFirstUserAndBanTheKillersMapsWIsTheSecondUserTurnParametersFour()) {
+      return EnumDataForGameMatchEEMyFirstUserVM.thisIsMyPickedKillerWEnemyTurnToBanTheKillersMaps;
+    }
+    if(gameMatch.isWhereThisIsLastPickedKillerFirstUserAndPickTheKillersPerksWIsTheFirstUserTurnParametersThree()) {
+      return EnumDataForGameMatchEEMyFirstUserVM.thisIsMyPickedKillerWMyTurnToPickTheKillersPerks;
+    }
+    if(gameMatch.isWhereThisIsLastPickedKillerFirstUserAndPickTheKillersPerksWIsTheSecondUserTurnParametersFour()) {
+      return EnumDataForGameMatchEEMyFirstUserVM.thisIsMyPickedKillerWEnemyTurnToPickTheKillersPerks;
+    }
+    if(gameMatch.isWhereThisIsLastPickedKillerFirstUserAndPickTheSurvivorsPerksWIsTheFirstUserTurnParametersThree()) {
+      return EnumDataForGameMatchEEMyFirstUserVM.thisIsMyPickedKillerWMyTurnToPickTheSurvivorsPerks;
+    }
+    if(gameMatch.isWhereThisIsLastPickedKillerFirstUserAndPickTheSurvivorsPerksWIsTheSecondUserTurnParametersFour()) {
+      return EnumDataForGameMatchEEMyFirstUserVM.thisIsMyPickedKillerWEnemyTurnToPickTheSurvivorsPerks;
+    }
+
+    if(gameMatch.isWhereThisIsLastPickedKillerSecondUserAndBanTheKillersMapsWIsTheSecondUserTurnParametersFour()) {
+      return EnumDataForGameMatchEEMyFirstUserVM.thisIsNotMyPickedKillerWEnemyTurnToBanTheKillersMaps;
+    }
+    if(gameMatch.isWhereThisIsLastPickedKillerSecondUserAndBanTheKillersMapsWIsTheFirstUserTurnParametersFour()) {
+      return EnumDataForGameMatchEEMyFirstUserVM.thisIsNotMyPickedKillerWMyTurnToBanTheKillersMaps;
+    }
+    if(gameMatch.isWhereThisIsLastPickedKillerSecondUserAndPickTheKillersPerksWIsTheSecondUserTurnParametersThree()) {
+      return EnumDataForGameMatchEEMyFirstUserVM.thisIsNotMyPickedKillerWEnemyTurnToPickTheKillersPerks;
+    }
+    if(gameMatch.isWhereThisIsLastPickedKillerSecondUserAndPickTheKillersPerksWIsTheFirstUserTurnParametersFour()) {
+      return EnumDataForGameMatchEEMyFirstUserVM.thisIsNotMyPickedKillerWMyTurnToPickTheKillersPerks;
+    }
+    if(gameMatch.isWhereThisIsLastPickedKillerSecondUserAndPickTheSurvivorsPerksWIsTheSecondUserTurnParametersThree()) {
+      return EnumDataForGameMatchEEMyFirstUserVM.thisIsNotMyPickedKillerWEnemyTurnToPickTheSurvivorsPerks;
+    }
+    if(gameMatch.isWhereThisIsLastPickedKillerSecondUserAndPickTheSurvivorsPerksWIsTheFirstUserTurnParametersFour()) {
+      return EnumDataForGameMatchEEMyFirstUserVM.thisIsNotMyPickedKillerWMyTurnToPickTheSurvivorsPerks;
+    }
+
+    if(gameMatch.isWhereThisIsLastPickedKillerNobodyUserAndBanTheKillersMapsWIsTheFirstUserTurnParametersFour()) {
+      return EnumDataForGameMatchEEMyFirstUserVM.thisIsNobodyPickedKillerWMyTurnToBanTheKillersMaps;
+    }
+    if(gameMatch.isWhereThisIsLastPickedKillerNobodyUserAndBanTheKillersMapsWIsTheSecondUserTurnParametersFour()) {
+      return EnumDataForGameMatchEEMyFirstUserVM.thisIsNobodyPickedKillerWEnemyTurnToBanTheKillersMaps;
+    }
+    if(gameMatch.isWhereThisIsLastPickedKillerNobodyUserAndPickTheKillersPerksWIsTheFirstUserTurnParametersThree()) {
+      return EnumDataForGameMatchEEMyFirstUserVM.thisIsNobodyPickedKillerWMyTurnToPickTheKillersPerks;
+    }
+    if(gameMatch.isWhereThisIsLastPickedKillerNobodyUserAndPickTheKillersPerksWIsTheSecondUserTurnParametersFour()) {
+      return EnumDataForGameMatchEEMyFirstUserVM.thisIsNobodyPickedKillerWEnemyTurnToPickTheKillersPerks;
+    }
+    if(gameMatch.isWhereThisIsLastPickedKillerNobodyUserAndPickTheSurvivorsPerksWIsTheFirstUserTurnParametersThree()) {
+      return EnumDataForGameMatchEEMyFirstUserVM.thisIsNobodyPickedKillerWMyTurnToPickTheSurvivorsPerks;
+    }
+    if(gameMatch.isWhereThisIsLastPickedKillerNobodyUserAndPickTheSurvivorsPerksWIsTheSecondUserTurnParametersFour()) {
+      return EnumDataForGameMatchEEMyFirstUserVM.thisIsNobodyPickedKillerWEnemyTurnToPickTheSurvivorsPerks;
+    }
+
+    if(gameMatch.isWhereThisIsLastPickedKillerAndPickTheKillersMapsWIsTheSystemTurnParametersTwo()) {
+      return EnumDataForGameMatchEEMyFirstUserVM.thisIsPickedKillerWSystemTurnToPickTheKillersMaps;
+    }
+    if(gameMatch.isWhereThisIsLastPickedKillerAndPickTheKillersPerksWIsTheSystemTurnParametersTwo()) {
+      return EnumDataForGameMatchEEMyFirstUserVM.thisIsPickedKillerWSystemTurnToPickTheKillersPerks;
+    }
+    if(gameMatch.isWhereThisIsLastPickedKillerAndPickTheSurvivorsPerksWIsTheSystemTurnParametersTwo()) {
+      return EnumDataForGameMatchEEMyFirstUserVM.thisIsPickedKillerWSystemTurnToPickTheSurvivorsPerks;
+    }
+
     if(gameMatch.isWhereFirstStageOfTheBanOnKillersItsTheFirstUserTurnParametersThree()) {
       return EnumDataForGameMatchEEMyFirstUserVM.myTurnToBanTheKillerInTheFirstStage;
     }

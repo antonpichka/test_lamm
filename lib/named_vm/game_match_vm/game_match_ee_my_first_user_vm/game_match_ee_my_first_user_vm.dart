@@ -45,33 +45,6 @@ final class GameMatchEEMyFirstUserVM {
       case EnumDataForGameMatchEEMyFirstUserVM.exception:
         AlgorithmsUtility.debugPrintWhereConsoleFromThisClassAndText(this, "Exception(${dataWNamed.exceptionController.getKeyParameterException})");
         break;
-      case EnumDataForGameMatchEEMyFirstUserVM.myTurnToBanTheKillerMaps:
-        // TODO: Handle this case.
-        throw UnimplementedError();
-      case EnumDataForGameMatchEEMyFirstUserVM.enemyTurnToBanTheKillerMaps:
-        // TODO: Handle this case.
-        throw UnimplementedError();
-      case EnumDataForGameMatchEEMyFirstUserVM.systemTurnToPickTheKillerMaps:
-        // TODO: Handle this case.
-        throw UnimplementedError();
-      case EnumDataForGameMatchEEMyFirstUserVM.myTurnToPickTheKillerPerks:
-        // TODO: Handle this case.
-        throw UnimplementedError();
-      case EnumDataForGameMatchEEMyFirstUserVM.enemyTurnToPickTheKillerPerks:
-        // TODO: Handle this case.
-        throw UnimplementedError();
-      case EnumDataForGameMatchEEMyFirstUserVM.systemTurnToPickTheKillerPerks:
-        // TODO: Handle this case.
-        throw UnimplementedError();
-      case EnumDataForGameMatchEEMyFirstUserVM.myTurnToPickTheSurvivorPerks:
-        // TODO: Handle this case.
-        throw UnimplementedError();
-      case EnumDataForGameMatchEEMyFirstUserVM.enemyTurnToPickTheSurvivorPerks:
-        // TODO: Handle this case.
-        throw UnimplementedError();
-      case EnumDataForGameMatchEEMyFirstUserVM.systemTurnToPickTheSurvivorPerks:
-        // TODO: Handle this case.
-        throw UnimplementedError();
       case EnumDataForGameMatchEEMyFirstUserVM.myTurnToBanTheKillerInTheFirstStage:
         AlgorithmsUtility.debugPrintWhereConsoleFromThisClassAndText(this, "MyTurnToBanTheKillerInTheFirstStage(${dataWNamed.getFormattedActionLogParameterGameMatch}\n${dataWNamed.gameMatch.getStringWhereShowBannedKillersAndThoseWhoAreNotBannedYet}\nInput (Index): )");
         final input = stdin.readLineSync();
