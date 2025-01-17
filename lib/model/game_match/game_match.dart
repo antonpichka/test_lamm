@@ -75,19 +75,391 @@ base class GameMatch extends BaseModel {
     return listBannedKiller.listModel.length < balance.getNumberOfAllKillersThatNeedToBeBannedInTheFirstStageWhereUsedInterestFormula;
   }
 
+  bool isWhereValidatedThisIsLastPickedKillerParametersListPickedKillerAndBalance() {
+    if(listPickedKiller.listModel.isEmpty) {
+      return true;
+    }
+    final last = listPickedKiller
+        .listModel
+        .last;
+    final balanceKillerFromUniqueIdByKillerParameterListModel = balance
+        .listBalanceKiller
+        .getBalanceKillerFromUniqueIdByKillerParameterListModel(last.killer.uniqueId);
+    return last.pickedMaps.uniqueId.isNotEmpty
+        && last.listBannedMaps.listModel.length == (balanceKillerFromUniqueIdByKillerParameterListModel.listMaps.listModel.length - 1)
+        && last.listPickedKillerPerk.listModel.length == (balanceKillerFromUniqueIdByKillerParameterListModel.requiredNumberOfSelectedKillerPerk * 2)
+        && last.listPickedSurvivorPerk.listModel.length == (balanceKillerFromUniqueIdByKillerParameterListModel.requiredNumberOfSelectedSurvivorPerk * 2);
+  }
+
   bool isWhereFirstStageOfThePickedKillersIsNotCompletedParametersThree() {
     return listBannedKiller.listModel.length == balance.getNumberOfAllKillersThatNeedToBeBannedInTheFirstStageWhereUsedInterestFormula
+        && isWhereValidatedThisIsLastPickedKillerParametersListPickedKillerAndBalance()
         && listPickedKiller.listModel.length < (balance.numberOfRounds - 1);
   }
 
   bool isWhereSecondStageOfTheBannedKillersIsNotCompletedParametersThree() {
-    return listPickedKiller.listModel.length == (balance.numberOfRounds - 1)
+    return isWhereValidatedThisIsLastPickedKillerParametersListPickedKillerAndBalance()
+        && listPickedKiller.listModel.length == (balance.numberOfRounds - 1)
         && listBannedKiller.listModel.length < balance.getNumberOfAllKillersThatNeedToBeBannedParametersListBalanceKillerAndNumberOfRounds;
   }
 
   bool isWhereSecondStageOfThePickedKillersIsNotCompletedParametersThree() {
     return listBannedKiller.listModel.length == balance.getNumberOfAllKillersThatNeedToBeBannedParametersListBalanceKillerAndNumberOfRounds
+        && isWhereValidatedThisIsLastPickedKillerParametersListPickedKillerAndBalance()
         && listPickedKiller.listModel.length < balance.numberOfRounds;
+  }
+
+  bool isWhereThisIsLastPickedKillerFirstUserAndBanTheKillersMapsWIsTheFirstUserTurnParametersFour() {
+    if(listPickedKiller.listModel.isEmpty) {
+      return false;
+    }
+    final last = listPickedKiller
+        .listModel
+        .last;
+    final balanceKillerFromUniqueIdByKillerParameterListModel = balance
+        .listBalanceKiller
+        .getBalanceKillerFromUniqueIdByKillerParameterListModel(last.killer.uniqueId);
+    return last.user.uniqueId == firstUser.uniqueId
+        && last.listBannedMaps.listModel.length < (balanceKillerFromUniqueIdByKillerParameterListModel.listMaps.listModel.length - 1)
+        && last.listBannedMaps.isWhereNumberOfBannedMapsLessWEqualFromUniqueIdByFirstUserAndUniqueIdBySecondUser(firstUser.uniqueId, secondUser.uniqueId);
+  }
+
+  bool isWhereThisIsLastPickedKillerFirstUserAndBanTheKillersMapsWIsTheSecondUserTurnParametersFour() {
+    if(listPickedKiller.listModel.isEmpty) {
+      return false;
+    }
+    final last = listPickedKiller
+        .listModel
+        .last;
+    final balanceKillerFromUniqueIdByKillerParameterListModel = balance
+        .listBalanceKiller
+        .getBalanceKillerFromUniqueIdByKillerParameterListModel(last.killer.uniqueId);
+    return last.user.uniqueId == firstUser.uniqueId
+        && last.listBannedMaps.listModel.length < (balanceKillerFromUniqueIdByKillerParameterListModel.listMaps.listModel.length - 1)
+        && last.listBannedMaps.isWhereNumberOfBannedMapsMoreFromUniqueIdByFirstUserAndUniqueIdBySecondUser(firstUser.uniqueId, secondUser.uniqueId);
+  }
+
+  bool isWhereThisIsLastPickedKillerFirstUserAndPickTheKillersPerksWIsTheFirstUserTurnParametersThree() {
+    if(listPickedKiller.listModel.isEmpty) {
+      return false;
+    }
+    final last = listPickedKiller
+        .listModel
+        .last;
+    final balanceKillerFromUniqueIdByKillerParameterListModel = balance
+        .listBalanceKiller
+        .getBalanceKillerFromUniqueIdByKillerParameterListModel(last.killer.uniqueId);
+    return last.user.uniqueId == firstUser.uniqueId
+        && last.pickedMaps.uniqueId.isNotEmpty
+        && last.listBannedMaps.listModel.length == (balanceKillerFromUniqueIdByKillerParameterListModel.listMaps.listModel.length - 1)
+        && balanceKillerFromUniqueIdByKillerParameterListModel.isWhereLengthNotEqualsParametersListKillerPerkAndRequiredNumberOfSelectedKillerPerk()
+        && last.listPickedKillerPerk.getNumberOfPickedKillerPerkFromUniqueIdByUserParameterListModel(firstUser.uniqueId) < balanceKillerFromUniqueIdByKillerParameterListModel.requiredNumberOfSelectedKillerPerk;
+  }
+
+  bool isWhereThisIsLastPickedKillerFirstUserAndPickTheKillersPerksWIsTheSecondUserTurnParametersFour() {
+    if(listPickedKiller.listModel.isEmpty) {
+      return false;
+    }
+    final last = listPickedKiller
+        .listModel
+        .last;
+    final balanceKillerFromUniqueIdByKillerParameterListModel = balance
+        .listBalanceKiller
+        .getBalanceKillerFromUniqueIdByKillerParameterListModel(last.killer.uniqueId);
+    return last.user.uniqueId == firstUser.uniqueId
+        && last.pickedMaps.uniqueId.isNotEmpty
+        && last.listBannedMaps.listModel.length == (balanceKillerFromUniqueIdByKillerParameterListModel.listMaps.listModel.length - 1)
+        && balanceKillerFromUniqueIdByKillerParameterListModel.isWhereLengthNotEqualsParametersListKillerPerkAndRequiredNumberOfSelectedKillerPerk()
+        && last.listPickedKillerPerk.getNumberOfPickedKillerPerkFromUniqueIdByUserParameterListModel(firstUser.uniqueId) == balanceKillerFromUniqueIdByKillerParameterListModel.requiredNumberOfSelectedKillerPerk
+        && last.listPickedKillerPerk.getNumberOfPickedKillerPerkFromUniqueIdByUserParameterListModel(secondUser.uniqueId) < balanceKillerFromUniqueIdByKillerParameterListModel.requiredNumberOfSelectedKillerPerk;
+  }
+
+  bool isWhereThisIsLastPickedKillerFirstUserAndPickTheSurvivorsPerksWIsTheFirstUserTurnParametersThree() {
+    if(listPickedKiller.listModel.isEmpty) {
+      return false;
+    }
+    final last = listPickedKiller
+        .listModel
+        .last;
+    final balanceKillerFromUniqueIdByKillerParameterListModel = balance
+        .listBalanceKiller
+        .getBalanceKillerFromUniqueIdByKillerParameterListModel(last.killer.uniqueId);
+    return last.user.uniqueId == firstUser.uniqueId
+        && last.pickedMaps.uniqueId.isNotEmpty
+        && last.listBannedMaps.listModel.length == (balanceKillerFromUniqueIdByKillerParameterListModel.listMaps.listModel.length - 1)
+        && last.listPickedKillerPerk.listModel.length == (balanceKillerFromUniqueIdByKillerParameterListModel.requiredNumberOfSelectedKillerPerk * 2)
+        && balanceKillerFromUniqueIdByKillerParameterListModel.isWhereLengthNotEqualsParametersListSurvivorPerkAndRequiredNumberOfSelectedSurvivorPerk()
+        && last.listPickedSurvivorPerk.getNumberOfPickedSurvivorPerkFromUniqueIdByUserParameterListModel(firstUser.uniqueId) < balanceKillerFromUniqueIdByKillerParameterListModel.requiredNumberOfSelectedSurvivorPerk;
+  }
+
+  bool isWhereThisIsLastPickedKillerFirstUserAndPickTheSurvivorsPerksWIsTheSecondUserTurnParametersFour() {
+    if(listPickedKiller.listModel.isEmpty) {
+      return false;
+    }
+    final last = listPickedKiller
+        .listModel
+        .last;
+    final balanceKillerFromUniqueIdByKillerParameterListModel = balance
+        .listBalanceKiller
+        .getBalanceKillerFromUniqueIdByKillerParameterListModel(last.killer.uniqueId);
+    return last.user.uniqueId == firstUser.uniqueId
+        && last.pickedMaps.uniqueId.isNotEmpty
+        && last.listBannedMaps.listModel.length == (balanceKillerFromUniqueIdByKillerParameterListModel.listMaps.listModel.length - 1)
+        && last.listPickedKillerPerk.listModel.length == (balanceKillerFromUniqueIdByKillerParameterListModel.requiredNumberOfSelectedKillerPerk * 2)
+        && balanceKillerFromUniqueIdByKillerParameterListModel.isWhereLengthNotEqualsParametersListSurvivorPerkAndRequiredNumberOfSelectedSurvivorPerk()
+        && last.listPickedSurvivorPerk.getNumberOfPickedSurvivorPerkFromUniqueIdByUserParameterListModel(firstUser.uniqueId) == balanceKillerFromUniqueIdByKillerParameterListModel.requiredNumberOfSelectedSurvivorPerk
+        && last.listPickedSurvivorPerk.getNumberOfPickedSurvivorPerkFromUniqueIdByUserParameterListModel(secondUser.uniqueId) < balanceKillerFromUniqueIdByKillerParameterListModel.requiredNumberOfSelectedSurvivorPerk;
+  }
+
+  bool isWhereThisIsLastPickedKillerSecondUserAndBanTheKillersMapsWIsTheSecondUserTurnParametersFour() {
+    if(listPickedKiller.listModel.isEmpty) {
+      return false;
+    }
+    final last = listPickedKiller
+        .listModel
+        .last;
+    final balanceKillerFromUniqueIdByKillerParameterListModel = balance
+        .listBalanceKiller
+        .getBalanceKillerFromUniqueIdByKillerParameterListModel(last.killer.uniqueId);
+    return last.user.uniqueId == secondUser.uniqueId
+        && last.listBannedMaps.listModel.length < (balanceKillerFromUniqueIdByKillerParameterListModel.listMaps.listModel.length - 1)
+        && last.listBannedMaps.isWhereNumberOfBannedMapsLessWEqualFromUniqueIdBySecondUserAndUniqueIdByFirstUser(secondUser.uniqueId, firstUser.uniqueId);
+  }
+
+  bool isWhereThisIsLastPickedKillerSecondUserAndBanTheKillersMapsWIsTheFirstUserTurnParametersFour() {
+    if(listPickedKiller.listModel.isEmpty) {
+      return false;
+    }
+    final last = listPickedKiller
+        .listModel
+        .last;
+    final balanceKillerFromUniqueIdByKillerParameterListModel = balance
+        .listBalanceKiller
+        .getBalanceKillerFromUniqueIdByKillerParameterListModel(last.killer.uniqueId);
+    return last.user.uniqueId == secondUser.uniqueId
+        && last.listBannedMaps.listModel.length < (balanceKillerFromUniqueIdByKillerParameterListModel.listMaps.listModel.length - 1)
+        && last.listBannedMaps.isWhereNumberOfBannedMapsMoreFromUniqueIdBySecondUserAndUniqueIdByFirstUser(secondUser.uniqueId, firstUser.uniqueId);
+  }
+
+  bool isWhereThisIsLastPickedKillerSecondUserAndPickTheKillersPerksWIsTheSecondUserTurnParametersThree() {
+    if(listPickedKiller.listModel.isEmpty) {
+      return false;
+    }
+    final last = listPickedKiller
+        .listModel
+        .last;
+    final balanceKillerFromUniqueIdByKillerParameterListModel = balance
+        .listBalanceKiller
+        .getBalanceKillerFromUniqueIdByKillerParameterListModel(last.killer.uniqueId);
+    return last.user.uniqueId == secondUser.uniqueId
+        && last.pickedMaps.uniqueId.isNotEmpty
+        && last.listBannedMaps.listModel.length == (balanceKillerFromUniqueIdByKillerParameterListModel.listMaps.listModel.length - 1)
+        && balanceKillerFromUniqueIdByKillerParameterListModel.isWhereLengthNotEqualsParametersListKillerPerkAndRequiredNumberOfSelectedKillerPerk()
+        && last.listPickedKillerPerk.getNumberOfPickedKillerPerkFromUniqueIdByUserParameterListModel(secondUser.uniqueId) < balanceKillerFromUniqueIdByKillerParameterListModel.requiredNumberOfSelectedKillerPerk;
+  }
+
+  bool isWhereThisIsLastPickedKillerSecondUserAndPickTheKillersPerksWIsTheFirstUserTurnParametersFour() {
+    if(listPickedKiller.listModel.isEmpty) {
+      return false;
+    }
+    final last = listPickedKiller
+        .listModel
+        .last;
+    final balanceKillerFromUniqueIdByKillerParameterListModel = balance
+        .listBalanceKiller
+        .getBalanceKillerFromUniqueIdByKillerParameterListModel(last.killer.uniqueId);
+    return last.user.uniqueId == secondUser.uniqueId
+        && last.pickedMaps.uniqueId.isNotEmpty
+        && last.listBannedMaps.listModel.length == (balanceKillerFromUniqueIdByKillerParameterListModel.listMaps.listModel.length - 1)
+        && balanceKillerFromUniqueIdByKillerParameterListModel.isWhereLengthNotEqualsParametersListKillerPerkAndRequiredNumberOfSelectedKillerPerk()
+        && last.listPickedKillerPerk.getNumberOfPickedKillerPerkFromUniqueIdByUserParameterListModel(secondUser.uniqueId) == balanceKillerFromUniqueIdByKillerParameterListModel.requiredNumberOfSelectedKillerPerk
+        && last.listPickedKillerPerk.getNumberOfPickedKillerPerkFromUniqueIdByUserParameterListModel(firstUser.uniqueId) < balanceKillerFromUniqueIdByKillerParameterListModel.requiredNumberOfSelectedKillerPerk;
+  }
+
+  bool isWhereThisIsLastPickedKillerSecondUserAndPickTheSurvivorsPerksWIsTheSecondUserTurnParametersThree() {
+    if(listPickedKiller.listModel.isEmpty) {
+      return false;
+    }
+    final last = listPickedKiller
+        .listModel
+        .last;
+    final balanceKillerFromUniqueIdByKillerParameterListModel = balance
+        .listBalanceKiller
+        .getBalanceKillerFromUniqueIdByKillerParameterListModel(last.killer.uniqueId);
+    return last.user.uniqueId == secondUser.uniqueId
+        && last.pickedMaps.uniqueId.isNotEmpty
+        && last.listBannedMaps.listModel.length == (balanceKillerFromUniqueIdByKillerParameterListModel.listMaps.listModel.length - 1)
+        && last.listPickedKillerPerk.listModel.length == (balanceKillerFromUniqueIdByKillerParameterListModel.requiredNumberOfSelectedKillerPerk * 2)
+        && balanceKillerFromUniqueIdByKillerParameterListModel.isWhereLengthNotEqualsParametersListSurvivorPerkAndRequiredNumberOfSelectedSurvivorPerk()
+        && last.listPickedSurvivorPerk.getNumberOfPickedSurvivorPerkFromUniqueIdByUserParameterListModel(secondUser.uniqueId) < balanceKillerFromUniqueIdByKillerParameterListModel.requiredNumberOfSelectedSurvivorPerk;
+  }
+
+  bool isWhereThisIsLastPickedKillerSecondUserAndPickTheSurvivorsPerksWIsTheFirstUserTurnParametersFour() {
+    if(listPickedKiller.listModel.isEmpty) {
+      return false;
+    }
+    final last = listPickedKiller
+        .listModel
+        .last;
+    final balanceKillerFromUniqueIdByKillerParameterListModel = balance
+        .listBalanceKiller
+        .getBalanceKillerFromUniqueIdByKillerParameterListModel(last.killer.uniqueId);
+    return last.user.uniqueId == secondUser.uniqueId
+        && last.pickedMaps.uniqueId.isNotEmpty
+        && last.listBannedMaps.listModel.length == (balanceKillerFromUniqueIdByKillerParameterListModel.listMaps.listModel.length - 1)
+        && last.listPickedKillerPerk.listModel.length == (balanceKillerFromUniqueIdByKillerParameterListModel.requiredNumberOfSelectedKillerPerk * 2)
+        && balanceKillerFromUniqueIdByKillerParameterListModel.isWhereLengthNotEqualsParametersListSurvivorPerkAndRequiredNumberOfSelectedSurvivorPerk()
+        && last.listPickedSurvivorPerk.getNumberOfPickedSurvivorPerkFromUniqueIdByUserParameterListModel(secondUser.uniqueId) == balanceKillerFromUniqueIdByKillerParameterListModel.requiredNumberOfSelectedSurvivorPerk
+        && last.listPickedSurvivorPerk.getNumberOfPickedSurvivorPerkFromUniqueIdByUserParameterListModel(firstUser.uniqueId) < balanceKillerFromUniqueIdByKillerParameterListModel.requiredNumberOfSelectedSurvivorPerk;
+  }
+
+  bool isWhereThisIsLastPickedKillerNobodyUserAndBanTheKillersMapsWIsTheFirstUserTurnParametersFour() {
+    if(listPickedKiller.listModel.isEmpty) {
+      return false;
+    }
+    final last = listPickedKiller
+        .listModel
+        .last;
+    final balanceKillerFromUniqueIdByKillerParameterListModel = balance
+        .listBalanceKiller
+        .getBalanceKillerFromUniqueIdByKillerParameterListModel(last.killer.uniqueId);
+    return last.user.uniqueId == ""
+        && last.listBannedMaps.listModel.length < (balanceKillerFromUniqueIdByKillerParameterListModel.listMaps.listModel.length - 1)
+        && last.listBannedMaps.isWhereNumberOfBannedMapsLessWEqualFromUniqueIdByFirstUserAndUniqueIdBySecondUser(firstUser.uniqueId, secondUser.uniqueId);
+  }
+
+  bool isWhereThisIsLastPickedKillerNobodyUserAndBanTheKillersMapsWIsTheSecondUserTurnParametersFour() {
+    if(listPickedKiller.listModel.isEmpty) {
+      return false;
+    }
+    final last = listPickedKiller
+        .listModel
+        .last;
+    final balanceKillerFromUniqueIdByKillerParameterListModel = balance
+        .listBalanceKiller
+        .getBalanceKillerFromUniqueIdByKillerParameterListModel(last.killer.uniqueId);
+    return last.user.uniqueId == ""
+        && last.listBannedMaps.listModel.length < (balanceKillerFromUniqueIdByKillerParameterListModel.listMaps.listModel.length - 1)
+        && last.listBannedMaps.isWhereNumberOfBannedMapsMoreFromUniqueIdByFirstUserAndUniqueIdBySecondUser(firstUser.uniqueId, secondUser.uniqueId);
+  }
+
+  bool isWhereThisIsLastPickedKillerNobodyUserAndPickTheKillersPerksWIsTheFirstUserTurnParametersThree() {
+    if(listPickedKiller.listModel.isEmpty) {
+      return false;
+    }
+    final last = listPickedKiller
+        .listModel
+        .last;
+    final balanceKillerFromUniqueIdByKillerParameterListModel = balance
+        .listBalanceKiller
+        .getBalanceKillerFromUniqueIdByKillerParameterListModel(last.killer.uniqueId);
+    return last.user.uniqueId == ""
+        && last.pickedMaps.uniqueId.isNotEmpty
+        && last.listBannedMaps.listModel.length == (balanceKillerFromUniqueIdByKillerParameterListModel.listMaps.listModel.length - 1)
+        && balanceKillerFromUniqueIdByKillerParameterListModel.isWhereLengthNotEqualsParametersListKillerPerkAndRequiredNumberOfSelectedKillerPerk()
+        && last.listPickedKillerPerk.getNumberOfPickedKillerPerkFromUniqueIdByUserParameterListModel(firstUser.uniqueId) < balanceKillerFromUniqueIdByKillerParameterListModel.requiredNumberOfSelectedKillerPerk;
+  }
+
+  bool isWhereThisIsLastPickedKillerNobodyUserAndPickTheKillersPerksWIsTheSecondUserTurnParametersFour() {
+    if(listPickedKiller.listModel.isEmpty) {
+      return false;
+    }
+    final last = listPickedKiller
+        .listModel
+        .last;
+    final balanceKillerFromUniqueIdByKillerParameterListModel = balance
+        .listBalanceKiller
+        .getBalanceKillerFromUniqueIdByKillerParameterListModel(last.killer.uniqueId);
+    return last.user.uniqueId == ""
+        && last.pickedMaps.uniqueId.isNotEmpty
+        && last.listBannedMaps.listModel.length == (balanceKillerFromUniqueIdByKillerParameterListModel.listMaps.listModel.length - 1)
+        && balanceKillerFromUniqueIdByKillerParameterListModel.isWhereLengthNotEqualsParametersListKillerPerkAndRequiredNumberOfSelectedKillerPerk()
+        && last.listPickedKillerPerk.getNumberOfPickedKillerPerkFromUniqueIdByUserParameterListModel(firstUser.uniqueId) == balanceKillerFromUniqueIdByKillerParameterListModel.requiredNumberOfSelectedKillerPerk
+        && last.listPickedKillerPerk.getNumberOfPickedKillerPerkFromUniqueIdByUserParameterListModel(secondUser.uniqueId) < balanceKillerFromUniqueIdByKillerParameterListModel.requiredNumberOfSelectedKillerPerk;
+  }
+
+  bool isWhereThisIsLastPickedKillerNobodyUserAndPickTheSurvivorsPerksWIsTheFirstUserTurnParametersThree() {
+    if(listPickedKiller.listModel.isEmpty) {
+      return false;
+    }
+    final last = listPickedKiller
+        .listModel
+        .last;
+    final balanceKillerFromUniqueIdByKillerParameterListModel = balance
+        .listBalanceKiller
+        .getBalanceKillerFromUniqueIdByKillerParameterListModel(last.killer.uniqueId);
+    return last.user.uniqueId == ""
+        && last.pickedMaps.uniqueId.isNotEmpty
+        && last.listBannedMaps.listModel.length == (balanceKillerFromUniqueIdByKillerParameterListModel.listMaps.listModel.length - 1)
+        && last.listPickedKillerPerk.listModel.length == (balanceKillerFromUniqueIdByKillerParameterListModel.requiredNumberOfSelectedKillerPerk * 2)
+        && balanceKillerFromUniqueIdByKillerParameterListModel.isWhereLengthNotEqualsParametersListSurvivorPerkAndRequiredNumberOfSelectedSurvivorPerk()
+        && last.listPickedSurvivorPerk.getNumberOfPickedSurvivorPerkFromUniqueIdByUserParameterListModel(firstUser.uniqueId) < balanceKillerFromUniqueIdByKillerParameterListModel.requiredNumberOfSelectedSurvivorPerk;
+  }
+
+  bool isWhereThisIsLastPickedKillerNobodyUserAndPickTheSurvivorsPerksWIsTheSecondUserTurnParametersFour() {
+    if(listPickedKiller.listModel.isEmpty) {
+      return false;
+    }
+    final last = listPickedKiller
+        .listModel
+        .last;
+    final balanceKillerFromUniqueIdByKillerParameterListModel = balance
+        .listBalanceKiller
+        .getBalanceKillerFromUniqueIdByKillerParameterListModel(last.killer.uniqueId);
+    return last.user.uniqueId == ""
+        && last.pickedMaps.uniqueId.isNotEmpty
+        && last.listBannedMaps.listModel.length == (balanceKillerFromUniqueIdByKillerParameterListModel.listMaps.listModel.length - 1)
+        && last.listPickedKillerPerk.listModel.length == (balanceKillerFromUniqueIdByKillerParameterListModel.requiredNumberOfSelectedKillerPerk * 2)
+        && balanceKillerFromUniqueIdByKillerParameterListModel.isWhereLengthNotEqualsParametersListSurvivorPerkAndRequiredNumberOfSelectedSurvivorPerk()
+        && last.listPickedSurvivorPerk.getNumberOfPickedSurvivorPerkFromUniqueIdByUserParameterListModel(firstUser.uniqueId) == balanceKillerFromUniqueIdByKillerParameterListModel.requiredNumberOfSelectedSurvivorPerk
+        && last.listPickedSurvivorPerk.getNumberOfPickedSurvivorPerkFromUniqueIdByUserParameterListModel(secondUser.uniqueId) < balanceKillerFromUniqueIdByKillerParameterListModel.requiredNumberOfSelectedSurvivorPerk;
+  }
+
+  bool isWhereThisIsLastPickedKillerAndPickTheKillersMapsWIsTheSystemTurnParametersTwo() {
+    if(listPickedKiller.listModel.isEmpty) {
+      return false;
+    }
+    final last = listPickedKiller
+        .listModel
+        .last;
+    final balanceKillerFromUniqueIdByKillerParameterListModel = balance
+        .listBalanceKiller
+        .getBalanceKillerFromUniqueIdByKillerParameterListModel(last.killer.uniqueId);
+    return last.listBannedMaps.listModel.length == (balanceKillerFromUniqueIdByKillerParameterListModel.listMaps.listModel.length - 1)
+        && last.pickedMaps.uniqueId.isEmpty;
+  }
+
+  bool isWhereThisIsLastPickedKillerAndPickTheKillersPerksWIsTheSystemTurnParametersTwo() {
+    if(listPickedKiller.listModel.isEmpty) {
+      return false;
+    }
+    final last = listPickedKiller
+        .listModel
+        .last;
+    final balanceKillerFromUniqueIdByKillerParameterListModel = balance
+        .listBalanceKiller
+        .getBalanceKillerFromUniqueIdByKillerParameterListModel(last.killer.uniqueId);
+    return last.pickedMaps.uniqueId.isNotEmpty
+        && last.listBannedMaps.listModel.length == (balanceKillerFromUniqueIdByKillerParameterListModel.listMaps.listModel.length - 1)
+        && balanceKillerFromUniqueIdByKillerParameterListModel.isWhereLengthEqualsParametersListKillerPerkAndRequiredNumberOfSelectedKillerPerk()
+        && last.listPickedKillerPerk.listModel.length != (balanceKillerFromUniqueIdByKillerParameterListModel.requiredNumberOfSelectedKillerPerk * 2);
+  }
+
+  bool isWhereThisIsLastPickedKillerAndPickTheSurvivorsPerksWIsTheSystemTurnParametersTwo() {
+    if(listPickedKiller.listModel.isEmpty) {
+      return false;
+    }
+    final last = listPickedKiller
+        .listModel
+        .last;
+    final balanceKillerFromUniqueIdByKillerParameterListModel = balance
+        .listBalanceKiller
+        .getBalanceKillerFromUniqueIdByKillerParameterListModel(last.killer.uniqueId);
+    return last.pickedMaps.uniqueId.isNotEmpty
+        && last.listBannedMaps.listModel.length == (balanceKillerFromUniqueIdByKillerParameterListModel.listMaps.listModel.length - 1)
+        && last.listPickedKillerPerk.listModel.length == (balanceKillerFromUniqueIdByKillerParameterListModel.requiredNumberOfSelectedKillerPerk * 2)
+        && balanceKillerFromUniqueIdByKillerParameterListModel.isWhereLengthEqualsParametersListSurvivorPerkAndRequiredNumberOfSelectedSurvivorPerk()
+        && last.listPickedSurvivorPerk.listModel.length != (balanceKillerFromUniqueIdByKillerParameterListModel.requiredNumberOfSelectedSurvivorPerk * 2);
   }
 
   bool isWhereFirstStageOfTheBanOnKillersItsTheFirstUserTurnParametersThree() {

@@ -23,4 +23,15 @@ base class ListBalanceKiller<T extends BalanceKiller> extends BaseListModel<T> {
     }
     return "ListBalanceKiller(listModel: [$strListModel])";
   }
+
+  BalanceKiller getBalanceKillerFromUniqueIdByKillerParameterListModel(String uniqueIdByKiller) {
+    BalanceKiller? balanceKiller;
+    for(final BalanceKiller itemModel in listModel) {
+      if(itemModel.killer.uniqueId == uniqueIdByKiller) {
+        balanceKiller = itemModel.clone();
+        break;
+      }
+    }
+    return balanceKiller!;
+  }
 }
