@@ -152,23 +152,23 @@ final class DataForGameMatchEEMyFirstUserVM extends BaseDataForNamed<EnumDataFor
       return EnumDataForGameMatchEEMyFirstUserVM.thisIsNotMyPickedKillerInRoundWMyKillerReadyAndEnemySurvivorReady;
     }
 
-    if(gameMatch.isWhereThisIsFirstUnfinishedRoundWKillerNotReadyWFirstParametersThree()) {
+    if(gameMatch.isWhereThisIsFirstUnfinishedRoundWKillerNotReadyWFirstParametersListRoundAndBalance()) {
       return EnumDataForGameMatchEEMyFirstUserVM.thisIsNobodyPickedKillerInRoundWMyKillerNotReady;
     }
-    if(gameMatch.isWhereThisIsFirstUnfinishedRoundWKillerReadyWFirstAndSurvivorNotReadyWSecondParametersThreeSecond()) {
+    if(gameMatch.isWhereThisIsFirstUnfinishedRoundWKillerReadyWFirstAndSurvivorNotReadyWSecondParametersTwo()) {
       return EnumDataForGameMatchEEMyFirstUserVM.thisIsNobodyPickedKillerInRoundWMyKillerReadyAndEnemySurvivorNotReady;
     }
-    if(gameMatch.isWhereThisIsFirstUnfinishedRoundWKillerReadyWFirstAndSurvivorReadyWSecondParametersThreeSecond()) {
+    if(gameMatch.isWhereThisIsFirstUnfinishedRoundWKillerReadyWFirstAndSurvivorReadyWSecondParametersTwo()) {
       return EnumDataForGameMatchEEMyFirstUserVM.thisIsNobodyPickedKillerInRoundWMyKillerReadyAndEnemySurvivorReady;
     }
-    if(gameMatch.isWhereThisIsFirstUnfinishedRoundWKillerNotReadyWSecondParametersThree()) {
+    if(gameMatch.isWhereThisIsFirstUnfinishedRoundWKillerNotReadyWSecondParametersTwo()) {
       return EnumDataForGameMatchEEMyFirstUserVM.thisIsNobodyPickedKillerInRoundWEnemyKillerNotReady;
     }
-    if(gameMatch.isWhereThisIsFirstUnfinishedRoundWKillerReadyWSecondAndSurvivorNotReadyWFirstParametersThreeSecond()) {
+    if(gameMatch.isWhereThisIsFirstUnfinishedRoundWKillerReadyWSecondAndSurvivorNotReadyWFirstParametersTwo()) {
       return EnumDataForGameMatchEEMyFirstUserVM.thisIsNobodyPickedKillerInRoundWEnemyKillerReadyAndMySurvivorNotReady;
     }
     /// Calculate ELO and thus determine the winner
-    if(gameMatch.isWhereThisIsFirstUnfinishedRoundWKillerReadyWSecondAndSurvivorReadyWFirstParametersThreeSecond()) {
+    if(gameMatch.isWhereThisIsFirstUnfinishedRoundWKillerReadyWSecondAndSurvivorReadyWFirstParametersTwo()) {
       return EnumDataForGameMatchEEMyFirstUserVM.thisIsNobodyPickedKillerInRoundWEnemyKillerReadyAndMySurvivorReady;
     }
     return EnumDataForGameMatchEEMyFirstUserVM.completed;
