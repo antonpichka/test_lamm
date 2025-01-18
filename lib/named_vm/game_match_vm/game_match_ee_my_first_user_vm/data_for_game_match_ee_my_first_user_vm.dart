@@ -36,6 +36,7 @@ final class DataForGameMatchEEMyFirstUserVM extends BaseDataForNamed<EnumDataFor
     if(gameMatch.isWhereThisIsLastPickedKillerFirstUserAndPickTheSurvivorsPerksWIsTheFirstUserTurnParametersThree()) {
       return EnumDataForGameMatchEEMyFirstUserVM.thisIsMyPickedKillerWMyTurnToPickTheSurvivorsPerks;
     }
+    /// This is a script to add 'Round'
     if(gameMatch.isWhereThisIsLastPickedKillerFirstUserAndPickTheSurvivorsPerksWIsTheSecondUserTurnParametersFour()) {
       return EnumDataForGameMatchEEMyFirstUserVM.thisIsMyPickedKillerWEnemyTurnToPickTheSurvivorsPerks;
     }
@@ -55,6 +56,7 @@ final class DataForGameMatchEEMyFirstUserVM extends BaseDataForNamed<EnumDataFor
     if(gameMatch.isWhereThisIsLastPickedKillerSecondUserAndPickTheSurvivorsPerksWIsTheSecondUserTurnParametersThree()) {
       return EnumDataForGameMatchEEMyFirstUserVM.thisIsNotMyPickedKillerWEnemyTurnToPickTheSurvivorsPerks;
     }
+    /// This is a script to add 'Round'
     if(gameMatch.isWhereThisIsLastPickedKillerSecondUserAndPickTheSurvivorsPerksWIsTheFirstUserTurnParametersFour()) {
       return EnumDataForGameMatchEEMyFirstUserVM.thisIsNotMyPickedKillerWMyTurnToPickTheSurvivorsPerks;
     }
@@ -74,6 +76,7 @@ final class DataForGameMatchEEMyFirstUserVM extends BaseDataForNamed<EnumDataFor
     if(gameMatch.isWhereThisIsLastPickedKillerNobodyUserAndPickTheSurvivorsPerksWIsTheFirstUserTurnParametersThree()) {
       return EnumDataForGameMatchEEMyFirstUserVM.thisIsNobodyPickedKillerWMyTurnToPickTheSurvivorsPerks;
     }
+    /// This is a script to add 'Round'
     if(gameMatch.isWhereThisIsLastPickedKillerNobodyUserAndPickTheSurvivorsPerksWIsTheSecondUserTurnParametersFour()) {
       return EnumDataForGameMatchEEMyFirstUserVM.thisIsNobodyPickedKillerWEnemyTurnToPickTheSurvivorsPerks;
     }
@@ -84,6 +87,7 @@ final class DataForGameMatchEEMyFirstUserVM extends BaseDataForNamed<EnumDataFor
     if(gameMatch.isWhereThisIsLastPickedKillerAndPickTheKillersPerksWIsTheSystemTurnParametersTwo()) {
       return EnumDataForGameMatchEEMyFirstUserVM.thisIsPickedKillerWSystemTurnToPickTheKillersPerks;
     }
+    /// This is a script to add 'Round'
     if(gameMatch.isWhereThisIsLastPickedKillerAndPickTheSurvivorsPerksWIsTheSystemTurnParametersTwo()) {
       return EnumDataForGameMatchEEMyFirstUserVM.thisIsPickedKillerWSystemTurnToPickTheSurvivorsPerks;
     }
@@ -108,6 +112,64 @@ final class DataForGameMatchEEMyFirstUserVM extends BaseDataForNamed<EnumDataFor
     }
     if(gameMatch.isWhereSecondStageOfThePickedKillersIsNotCompletedParametersThree()) {
       return EnumDataForGameMatchEEMyFirstUserVM.systemTurnToPickTheKillerInTheSecondStage;
+    }
+
+    if(gameMatch.isWhereThisIsFirstUnfinishedRoundWKillerNotReadyWFirstParametersListRoundAndBalanceAndFirstUser()) {
+      return EnumDataForGameMatchEEMyFirstUserVM.thisIsMyPickedKillerInRoundWMyKillerNotReady;
+    }
+    if(gameMatch.isWhereThisIsFirstUnfinishedRoundWKillerReadyWFirstAndSurvivorNotReadyWSecondParametersThree()) {
+      return EnumDataForGameMatchEEMyFirstUserVM.thisIsMyPickedKillerInRoundWMyKillerReadyAndEnemySurvivorNotReady;
+    }
+    if(gameMatch.isWhereThisIsFirstUnfinishedRoundWKillerReadyWFirstAndSurvivorReadyWSecondParametersThree()) {
+      return EnumDataForGameMatchEEMyFirstUserVM.thisIsMyPickedKillerInRoundWMyKillerReadyAndEnemySurvivorReady;
+    }
+    if(gameMatch.isWhereThisIsFirstUnfinishedRoundWKillerNotReadyWSecondParametersListRoundAndBalanceAndFirstUser()) {
+      return EnumDataForGameMatchEEMyFirstUserVM.thisIsMyPickedKillerInRoundWEnemyKillerNotReady;
+    }
+    if(gameMatch.isWhereThisIsFirstUnfinishedRoundWKillerReadyWSecondAndSurvivorNotReadyWFirstParametersThree()) {
+      return EnumDataForGameMatchEEMyFirstUserVM.thisIsMyPickedKillerInRoundWEnemyKillerReadyAndMySurvivorNotReady;
+    }
+    if(gameMatch.isWhereThisIsFirstUnfinishedRoundWKillerReadyWSecondAndSurvivorReadyWFirstParametersThree()) {
+      return EnumDataForGameMatchEEMyFirstUserVM.thisIsMyPickedKillerInRoundWEnemyKillerReadyAndMySurvivorReady;
+    }
+
+    if(gameMatch.isWhereThisIsFirstUnfinishedRoundWKillerNotReadyWSecondParametersListRoundAndBalanceAndSecondUser()) {
+      return EnumDataForGameMatchEEMyFirstUserVM.thisIsNotMyPickedKillerInRoundWEnemyKillerNotReady;
+    }
+    if(gameMatch.isWhereThisIsFirstUnfinishedRoundWKillerReadyWSecondAndSurvivorNotReadyWFirstParametersThreeFirst()) {
+      return EnumDataForGameMatchEEMyFirstUserVM.thisIsNotMyPickedKillerInRoundWEnemyKillerReadyAndMySurvivorNotReady;
+    }
+    if(gameMatch.isWhereThisIsFirstUnfinishedRoundWKillerReadyWSecondAndSurvivorReadyWFirstParametersThreeFirst()) {
+      return EnumDataForGameMatchEEMyFirstUserVM.thisIsNotMyPickedKillerInRoundWEnemyKillerReadyAndMySurvivorReady;
+    }
+    if(gameMatch.isWhereThisIsFirstUnfinishedRoundWKillerNotReadyWFirstParametersListRoundAndBalanceAndSecondUser()) {
+      return EnumDataForGameMatchEEMyFirstUserVM.thisIsNotMyPickedKillerInRoundWMyKillerNotReady;
+    }
+    if(gameMatch.isWhereThisIsFirstUnfinishedRoundWKillerReadyWFirstAndSurvivorNotReadyWSecondParametersThreeFirst()) {
+      return EnumDataForGameMatchEEMyFirstUserVM.thisIsNotMyPickedKillerInRoundWMyKillerReadyAndEnemySurvivorNotReady;
+    }
+    if(gameMatch.isWhereThisIsFirstUnfinishedRoundWKillerReadyWFirstAndSurvivorReadyWSecondParametersThreeFirst()) {
+      return EnumDataForGameMatchEEMyFirstUserVM.thisIsNotMyPickedKillerInRoundWMyKillerReadyAndEnemySurvivorReady;
+    }
+
+    if(gameMatch.isWhereThisIsFirstUnfinishedRoundWKillerNotReadyWFirstParametersThree()) {
+      return EnumDataForGameMatchEEMyFirstUserVM.thisIsNobodyPickedKillerInRoundWMyKillerNotReady;
+    }
+    if(gameMatch.isWhereThisIsFirstUnfinishedRoundWKillerReadyWFirstAndSurvivorNotReadyWSecondParametersThreeSecond()) {
+      return EnumDataForGameMatchEEMyFirstUserVM.thisIsNobodyPickedKillerInRoundWMyKillerReadyAndEnemySurvivorNotReady;
+    }
+    if(gameMatch.isWhereThisIsFirstUnfinishedRoundWKillerReadyWFirstAndSurvivorReadyWSecondParametersThreeSecond()) {
+      return EnumDataForGameMatchEEMyFirstUserVM.thisIsNobodyPickedKillerInRoundWMyKillerReadyAndEnemySurvivorReady;
+    }
+    if(gameMatch.isWhereThisIsFirstUnfinishedRoundWKillerNotReadyWSecondParametersThree()) {
+      return EnumDataForGameMatchEEMyFirstUserVM.thisIsNobodyPickedKillerInRoundWEnemyKillerNotReady;
+    }
+    if(gameMatch.isWhereThisIsFirstUnfinishedRoundWKillerReadyWSecondAndSurvivorNotReadyWFirstParametersThreeSecond()) {
+      return EnumDataForGameMatchEEMyFirstUserVM.thisIsNobodyPickedKillerInRoundWEnemyKillerReadyAndMySurvivorNotReady;
+    }
+    /// Calculate ELO and thus determine the winner
+    if(gameMatch.isWhereThisIsFirstUnfinishedRoundWKillerReadyWSecondAndSurvivorReadyWFirstParametersThreeSecond()) {
+      return EnumDataForGameMatchEEMyFirstUserVM.thisIsNobodyPickedKillerInRoundWEnemyKillerReadyAndMySurvivorReady;
     }
     return EnumDataForGameMatchEEMyFirstUserVM.completed;
   }

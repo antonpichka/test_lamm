@@ -45,6 +45,69 @@ final class GameMatchEEMyFirstUserVM {
       case EnumDataForGameMatchEEMyFirstUserVM.exception:
         AlgorithmsUtility.debugPrintWhereConsoleFromThisClassAndText(this, "Exception(${dataWNamed.exceptionController.getKeyParameterException})");
         break;
+      case EnumDataForGameMatchEEMyFirstUserVM.thisIsMyPickedKillerWMyTurnToBanTheKillersMaps:
+        // TODO: Handle this case.
+        throw UnimplementedError();
+      case EnumDataForGameMatchEEMyFirstUserVM.thisIsMyPickedKillerWEnemyTurnToBanTheKillersMaps:
+        // TODO: Handle this case.
+        throw UnimplementedError();
+      case EnumDataForGameMatchEEMyFirstUserVM.thisIsMyPickedKillerWMyTurnToPickTheKillersPerks:
+        // TODO: Handle this case.
+        throw UnimplementedError();
+      case EnumDataForGameMatchEEMyFirstUserVM.thisIsMyPickedKillerWEnemyTurnToPickTheKillersPerks:
+        // TODO: Handle this case.
+        throw UnimplementedError();
+      case EnumDataForGameMatchEEMyFirstUserVM.thisIsMyPickedKillerWMyTurnToPickTheSurvivorsPerks:
+        // TODO: Handle this case.
+        throw UnimplementedError();
+      case EnumDataForGameMatchEEMyFirstUserVM.thisIsMyPickedKillerWEnemyTurnToPickTheSurvivorsPerks:
+        // TODO: Handle this case.
+        throw UnimplementedError();
+      case EnumDataForGameMatchEEMyFirstUserVM.thisIsNotMyPickedKillerWEnemyTurnToBanTheKillersMaps:
+        // TODO: Handle this case.
+        throw UnimplementedError();
+      case EnumDataForGameMatchEEMyFirstUserVM.thisIsNotMyPickedKillerWMyTurnToBanTheKillersMaps:
+        // TODO: Handle this case.
+        throw UnimplementedError();
+      case EnumDataForGameMatchEEMyFirstUserVM.thisIsNotMyPickedKillerWEnemyTurnToPickTheKillersPerks:
+        // TODO: Handle this case.
+        throw UnimplementedError();
+      case EnumDataForGameMatchEEMyFirstUserVM.thisIsNotMyPickedKillerWMyTurnToPickTheKillersPerks:
+        // TODO: Handle this case.
+        throw UnimplementedError();
+      case EnumDataForGameMatchEEMyFirstUserVM.thisIsNotMyPickedKillerWEnemyTurnToPickTheSurvivorsPerks:
+        // TODO: Handle this case.
+        throw UnimplementedError();
+      case EnumDataForGameMatchEEMyFirstUserVM.thisIsNotMyPickedKillerWMyTurnToPickTheSurvivorsPerks:
+        // TODO: Handle this case.
+        throw UnimplementedError();
+      case EnumDataForGameMatchEEMyFirstUserVM.thisIsNobodyPickedKillerWMyTurnToBanTheKillersMaps:
+        // TODO: Handle this case.
+        throw UnimplementedError();
+      case EnumDataForGameMatchEEMyFirstUserVM.thisIsNobodyPickedKillerWEnemyTurnToBanTheKillersMaps:
+        // TODO: Handle this case.
+        throw UnimplementedError();
+      case EnumDataForGameMatchEEMyFirstUserVM.thisIsNobodyPickedKillerWMyTurnToPickTheKillersPerks:
+        // TODO: Handle this case.
+        throw UnimplementedError();
+      case EnumDataForGameMatchEEMyFirstUserVM.thisIsNobodyPickedKillerWEnemyTurnToPickTheKillersPerks:
+        // TODO: Handle this case.
+        throw UnimplementedError();
+      case EnumDataForGameMatchEEMyFirstUserVM.thisIsNobodyPickedKillerWMyTurnToPickTheSurvivorsPerks:
+        // TODO: Handle this case.
+        throw UnimplementedError();
+      case EnumDataForGameMatchEEMyFirstUserVM.thisIsNobodyPickedKillerWEnemyTurnToPickTheSurvivorsPerks:
+        // TODO: Handle this case.
+        throw UnimplementedError();
+      case EnumDataForGameMatchEEMyFirstUserVM.thisIsPickedKillerWSystemTurnToPickTheKillersMaps:
+        // TODO: Handle this case.
+        throw UnimplementedError();
+      case EnumDataForGameMatchEEMyFirstUserVM.thisIsPickedKillerWSystemTurnToPickTheKillersPerks:
+        // TODO: Handle this case.
+        throw UnimplementedError();
+      case EnumDataForGameMatchEEMyFirstUserVM.thisIsPickedKillerWSystemTurnToPickTheSurvivorsPerks:
+        // TODO: Handle this case.
+        throw UnimplementedError();
       case EnumDataForGameMatchEEMyFirstUserVM.myTurnToBanTheKillerInTheFirstStage:
         AlgorithmsUtility.debugPrintWhereConsoleFromThisClassAndText(this, "MyTurnToBanTheKillerInTheFirstStage(${dataWNamed.getFormattedActionLogParameterGameMatch}\n${dataWNamed.gameMatch.getStringWhereShowBannedKillersAndThoseWhoAreNotBannedYet}\nInput (Index): )");
         final input = stdin.readLineSync();
@@ -68,6 +131,60 @@ final class GameMatchEEMyFirstUserVM {
         // TODO: Handle this case.
         throw UnimplementedError();
       case EnumDataForGameMatchEEMyFirstUserVM.systemTurnToPickTheKillerInTheSecondStage:
+        // TODO: Handle this case.
+        throw UnimplementedError();
+      case EnumDataForGameMatchEEMyFirstUserVM.thisIsMyPickedKillerInRoundWMyKillerNotReady:
+        // TODO: Handle this case.
+        throw UnimplementedError();
+      case EnumDataForGameMatchEEMyFirstUserVM.thisIsMyPickedKillerInRoundWMyKillerReadyAndEnemySurvivorNotReady:
+        // TODO: Handle this case.
+        throw UnimplementedError();
+      case EnumDataForGameMatchEEMyFirstUserVM.thisIsMyPickedKillerInRoundWMyKillerReadyAndEnemySurvivorReady:
+        // TODO: Handle this case.
+        throw UnimplementedError();
+      case EnumDataForGameMatchEEMyFirstUserVM.thisIsMyPickedKillerInRoundWEnemyKillerNotReady:
+        // TODO: Handle this case.
+        throw UnimplementedError();
+      case EnumDataForGameMatchEEMyFirstUserVM.thisIsMyPickedKillerInRoundWEnemyKillerReadyAndMySurvivorNotReady:
+        // TODO: Handle this case.
+        throw UnimplementedError();
+      case EnumDataForGameMatchEEMyFirstUserVM.thisIsMyPickedKillerInRoundWEnemyKillerReadyAndMySurvivorReady:
+        // TODO: Handle this case.
+        throw UnimplementedError();
+      case EnumDataForGameMatchEEMyFirstUserVM.thisIsNotMyPickedKillerInRoundWEnemyKillerNotReady:
+        // TODO: Handle this case.
+        throw UnimplementedError();
+      case EnumDataForGameMatchEEMyFirstUserVM.thisIsNotMyPickedKillerInRoundWEnemyKillerReadyAndMySurvivorNotReady:
+        // TODO: Handle this case.
+        throw UnimplementedError();
+      case EnumDataForGameMatchEEMyFirstUserVM.thisIsNotMyPickedKillerInRoundWEnemyKillerReadyAndMySurvivorReady:
+        // TODO: Handle this case.
+        throw UnimplementedError();
+      case EnumDataForGameMatchEEMyFirstUserVM.thisIsNotMyPickedKillerInRoundWMyKillerNotReady:
+        // TODO: Handle this case.
+        throw UnimplementedError();
+      case EnumDataForGameMatchEEMyFirstUserVM.thisIsNotMyPickedKillerInRoundWMyKillerReadyAndEnemySurvivorNotReady:
+        // TODO: Handle this case.
+        throw UnimplementedError();
+      case EnumDataForGameMatchEEMyFirstUserVM.thisIsNotMyPickedKillerInRoundWMyKillerReadyAndEnemySurvivorReady:
+        // TODO: Handle this case.
+        throw UnimplementedError();
+      case EnumDataForGameMatchEEMyFirstUserVM.thisIsNobodyPickedKillerInRoundWMyKillerNotReady:
+        // TODO: Handle this case.
+        throw UnimplementedError();
+      case EnumDataForGameMatchEEMyFirstUserVM.thisIsNobodyPickedKillerInRoundWMyKillerReadyAndEnemySurvivorNotReady:
+        // TODO: Handle this case.
+        throw UnimplementedError();
+      case EnumDataForGameMatchEEMyFirstUserVM.thisIsNobodyPickedKillerInRoundWMyKillerReadyAndEnemySurvivorReady:
+        // TODO: Handle this case.
+        throw UnimplementedError();
+      case EnumDataForGameMatchEEMyFirstUserVM.thisIsNobodyPickedKillerInRoundWEnemyKillerNotReady:
+        // TODO: Handle this case.
+        throw UnimplementedError();
+      case EnumDataForGameMatchEEMyFirstUserVM.thisIsNobodyPickedKillerInRoundWEnemyKillerReadyAndMySurvivorNotReady:
+        // TODO: Handle this case.
+        throw UnimplementedError();
+      case EnumDataForGameMatchEEMyFirstUserVM.thisIsNobodyPickedKillerInRoundWEnemyKillerReadyAndMySurvivorReady:
         // TODO: Handle this case.
         throw UnimplementedError();
       case EnumDataForGameMatchEEMyFirstUserVM.completed:
