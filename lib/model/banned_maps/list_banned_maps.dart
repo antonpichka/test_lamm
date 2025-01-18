@@ -24,6 +24,7 @@ base class ListBannedMaps<T extends BannedMaps> extends BaseListModel<T> {
     return "ListBannedMaps(listModel: [$strListModel])";
   }
 
+  @nonVirtual
   int getNumberOfBannedMapsFromUniqueIdByUserParameterListModel(String uniqueIdByUser) {
     int iteration = 0;
     for(final T itemModel in listModel) {
@@ -35,21 +36,25 @@ base class ListBannedMaps<T extends BannedMaps> extends BaseListModel<T> {
     return iteration;
   }
 
+  @nonVirtual
   bool isWhereNumberOfBannedMapsLessWEqualFromUniqueIdByFirstUserAndUniqueIdBySecondUser(String uniqueIdByFirstUser, String uniqueIdBySecondUser) {
     return getNumberOfBannedMapsFromUniqueIdByUserParameterListModel(uniqueIdByFirstUser)
         <= getNumberOfBannedMapsFromUniqueIdByUserParameterListModel(uniqueIdBySecondUser);
   }
 
+  @nonVirtual
   bool isWhereNumberOfBannedMapsMoreFromUniqueIdByFirstUserAndUniqueIdBySecondUser(String uniqueIdByFirstUser, String uniqueIdBySecondUser) {
     return getNumberOfBannedMapsFromUniqueIdByUserParameterListModel(uniqueIdByFirstUser)
         > getNumberOfBannedMapsFromUniqueIdByUserParameterListModel(uniqueIdBySecondUser);
   }
 
+  @nonVirtual
   bool isWhereNumberOfBannedMapsLessWEqualFromUniqueIdBySecondUserAndUniqueIdByFirstUser(String uniqueIdBySecondUser, String uniqueIdByFirstUser) {
     return getNumberOfBannedMapsFromUniqueIdByUserParameterListModel(uniqueIdBySecondUser)
         <= getNumberOfBannedMapsFromUniqueIdByUserParameterListModel(uniqueIdByFirstUser);
   }
 
+  @nonVirtual
   bool isWhereNumberOfBannedMapsMoreFromUniqueIdBySecondUserAndUniqueIdByFirstUser(String uniqueIdBySecondUser, String uniqueIdByFirstUser) {
     return getNumberOfBannedMapsFromUniqueIdByUserParameterListModel(uniqueIdBySecondUser)
         > getNumberOfBannedMapsFromUniqueIdByUserParameterListModel(uniqueIdByFirstUser);

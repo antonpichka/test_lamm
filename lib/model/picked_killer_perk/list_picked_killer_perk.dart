@@ -24,6 +24,7 @@ base class ListPickedKillerPerk<T extends PickedKillerPerk> extends BaseListMode
     return "ListPickedKillerPerk(listModel: [$strListModel])";
   }
 
+  @nonVirtual
   int getNumberOfPickedKillerPerkFromUniqueIdByUserParameterListModel(String uniqueIdByUser) {
     int iteration = 0;
     for(final T itemModel in listModel) {

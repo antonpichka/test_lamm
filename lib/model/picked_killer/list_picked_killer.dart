@@ -24,6 +24,7 @@ base class ListPickedKiller<T extends PickedKiller> extends BaseListModel<T> {
     return "ListPickedKiller(listModel: [$strListModel])";
   }
 
+  @nonVirtual
   int getNumberOfPickedKillersFromUniqueIdByUserParameterListModel(String uniqueIdByUser) {
     int iteration = 0;
     for(final T itemModel in listModel) {
@@ -35,11 +36,13 @@ base class ListPickedKiller<T extends PickedKiller> extends BaseListModel<T> {
     return iteration;
   }
 
+  @nonVirtual
   bool isWhereNumberOfPickedKillersLessWEqualFromUniqueIdByFirstUserAndUniqueIdBySecondUser(String uniqueIdByFirstUser, String uniqueIdBySecondUser) {
     return getNumberOfPickedKillersFromUniqueIdByUserParameterListModel(uniqueIdByFirstUser)
         <= getNumberOfPickedKillersFromUniqueIdByUserParameterListModel(uniqueIdBySecondUser);
   }
 
+  @nonVirtual
   bool isWhereNumberOfPickedKillersMoreFromUniqueIdByFirstUserAndUniqueIdBySecondUser(String uniqueIdByFirstUser, String uniqueIdBySecondUser) {
     return getNumberOfPickedKillersFromUniqueIdByUserParameterListModel(uniqueIdByFirstUser)
         > getNumberOfPickedKillersFromUniqueIdByUserParameterListModel(uniqueIdBySecondUser);

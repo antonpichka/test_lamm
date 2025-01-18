@@ -24,6 +24,7 @@ base class ListPickedSurvivorPerk<T extends PickedSurvivorPerk> extends BaseList
     return "ListPickedSurvivorPerk(listModel: [$strListModel])";
   }
 
+  @nonVirtual
   int getNumberOfPickedSurvivorPerkFromUniqueIdByUserParameterListModel(String uniqueIdByUser) {
     int iteration = 0;
     for(final T itemModel in listModel) {

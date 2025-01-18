@@ -21,18 +21,22 @@ base class SearchGame extends BaseModel {
     return "SearchGame(uniqueId: $uniqueId, updatedAt: $updatedAt, user: $user, userWEnemy: $userWEnemy, isSearching: $isSearching, isAccepted: $isAccepted, isAcceptedWEnemy: $isAcceptedWEnemy)";
   }
 
+  @nonVirtual
   bool isWhereTrueParametersIsAcceptedAndIsAcceptedWEnemy() {
     return isAccepted && isAcceptedWEnemy;
   }
 
+  @nonVirtual
   bool isWhereTrueAndFalseParametersIsAcceptedAndIsAcceptedWEnemy() {
     return isAccepted && !isAcceptedWEnemy;
   }
 
+  @nonVirtual
   bool isWhereTrueAndIsEmptyByUniqueIdParametersIsSearchingAndUserWEnemy() {
     return isSearching && userWEnemy.uniqueId.isEmpty;
   }
 
+  @nonVirtual
   bool isWhereTrueAndIsNotEmptyByUniqueIdParametersIsSearchingAndUserWEnemy() {
     return isSearching && userWEnemy.uniqueId.isNotEmpty;
   }

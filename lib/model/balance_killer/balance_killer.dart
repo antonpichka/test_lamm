@@ -26,18 +26,22 @@ base class BalanceKiller extends BaseModel {
     return "BalanceKiller(uniqueId: $uniqueId, killer: $killer, listMaps: $listMaps, listKillerPerk: $listKillerPerk, listSurvivorPerk: $listSurvivorPerk, requiredNumberOfSelectedKillerPerk: $requiredNumberOfSelectedKillerPerk, requiredNumberOfSelectedSurvivorPerk: $requiredNumberOfSelectedSurvivorPerk)";
   }
 
+  @nonVirtual
   bool isWhereLengthNotEqualsParametersListKillerPerkAndRequiredNumberOfSelectedKillerPerk() {
     return listKillerPerk.listModel.length != requiredNumberOfSelectedKillerPerk;
   }
 
+  @nonVirtual
   bool isWhereLengthNotEqualsParametersListSurvivorPerkAndRequiredNumberOfSelectedSurvivorPerk() {
     return listSurvivorPerk.listModel.length != requiredNumberOfSelectedSurvivorPerk;
   }
 
+  @nonVirtual
   bool isWhereLengthEqualsParametersListKillerPerkAndRequiredNumberOfSelectedKillerPerk() {
     return listKillerPerk.listModel.length == requiredNumberOfSelectedKillerPerk;
   }
 
+  @nonVirtual
   bool isWhereLengthEqualsParametersListSurvivorPerkAndRequiredNumberOfSelectedSurvivorPerk() {
     return listSurvivorPerk.listModel.length == requiredNumberOfSelectedSurvivorPerk;
   }

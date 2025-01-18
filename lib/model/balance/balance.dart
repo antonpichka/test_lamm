@@ -22,10 +22,12 @@ base class Balance extends BaseModel {
     return "Balance(uniqueId: $uniqueId, season: $season, numberOfRounds: $numberOfRounds, listBalanceKiller: $listBalanceKiller)";
   }
 
+  @nonVirtual
   int get getNumberOfAllKillersThatNeedToBeBannedParametersListBalanceKillerAndNumberOfRounds {
     return listBalanceKiller.listModel.length - numberOfRounds;
   }
 
+  @nonVirtual
   int get getNumberOfAllKillersThatNeedToBeBannedInTheFirstStageWhereUsedInterestFormula {
     return AlgorithmsUtility.getInterestFormulaFromNumberAndFindPercent(getNumberOfAllKillersThatNeedToBeBannedParametersListBalanceKillerAndNumberOfRounds, 50);
   }
