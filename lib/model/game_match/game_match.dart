@@ -603,37 +603,37 @@ base class GameMatch extends BaseModel {
   }
 
   @nonVirtual
-  bool isWhereThisIsFirstUnfinishedRoundWKillerNotReadyWFirstParametersThree() {
+  bool isWhereThisIsFirstUnfinishedRoundWKillerNotReadyWFirstParametersListRoundAndBalance() {
     return listRound.listModel.length == balance.numberOfRounds
         && listRound.isWhereThisIsFirstUnfinishedRoundWKillerNotReadyWFirstFromUniqueIdByUser("");
   }
 
   @nonVirtual
-  bool isWhereThisIsFirstUnfinishedRoundWKillerReadyWFirstAndSurvivorNotReadyWSecondParametersThreeSecond() {
+  bool isWhereThisIsFirstUnfinishedRoundWKillerReadyWFirstAndSurvivorNotReadyWSecondParametersTwo() {
     return listRound.listModel.length == balance.numberOfRounds
         && listRound.isWhereThisIsFirstUnfinishedRoundWKillerReadyWFirstAndSurvivorNotReadyWSecondFromOne("");
   }
 
   @nonVirtual
-  bool isWhereThisIsFirstUnfinishedRoundWKillerReadyWFirstAndSurvivorReadyWSecondParametersThreeSecond() {
+  bool isWhereThisIsFirstUnfinishedRoundWKillerReadyWFirstAndSurvivorReadyWSecondParametersTwo() {
     return listRound.listModel.length == balance.numberOfRounds
         && listRound.isWhereThisIsFirstUnfinishedRoundWKillerReadyWFirstAndSurvivorReadyWSecondFromOne("");
   }
 
   @nonVirtual
-  bool isWhereThisIsFirstUnfinishedRoundWKillerNotReadyWSecondParametersThree() {
+  bool isWhereThisIsFirstUnfinishedRoundWKillerNotReadyWSecondParametersTwo() {
     return listRound.listModel.length == balance.numberOfRounds
         && listRound.isWhereThisIsFirstUnfinishedRoundWKillerNotReadyWSecondFromOne("");
   }
 
   @nonVirtual
-  bool isWhereThisIsFirstUnfinishedRoundWKillerReadyWSecondAndSurvivorNotReadyWFirstParametersThreeSecond() {
+  bool isWhereThisIsFirstUnfinishedRoundWKillerReadyWSecondAndSurvivorNotReadyWFirstParametersTwo() {
     return listRound.listModel.length == balance.numberOfRounds
         && listRound.isWhereThisIsFirstUnfinishedRoundWKillerReadyWSecondAndSurvivorNotReadyWFirstFromOne("");
   }
 
   @nonVirtual
-  bool isWhereThisIsFirstUnfinishedRoundWKillerReadyWSecondAndSurvivorReadyWFirstParametersThreeSecond() {
+  bool isWhereThisIsFirstUnfinishedRoundWKillerReadyWSecondAndSurvivorReadyWFirstParametersTwo() {
     return listRound.listModel.length == balance.numberOfRounds
         && listRound.isWhereThisIsFirstUnfinishedRoundWKillerReadyWSecondAndSurvivorReadyWFirstFromOne("");
   }
