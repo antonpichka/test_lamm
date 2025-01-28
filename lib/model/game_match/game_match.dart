@@ -5,7 +5,13 @@ import 'package:test_lamm/model/balance_killer/balance_killer.dart';
 import 'package:test_lamm/model/balance_killer/list_balance_killer.dart';
 import 'package:test_lamm/model/banned_killer/banned_killer.dart';
 import 'package:test_lamm/model/banned_killer/list_banned_killer.dart';
+import 'package:test_lamm/model/banned_maps/list_banned_maps.dart';
+import 'package:test_lamm/model/maps/maps.dart';
 import 'package:test_lamm/model/picked_killer/list_picked_killer.dart';
+import 'package:test_lamm/model/picked_killer/picked_killer.dart';
+import 'package:test_lamm/model/picked_killer_perk/list_picked_killer_perk.dart';
+import 'package:test_lamm/model/picked_maps/picked_maps.dart';
+import 'package:test_lamm/model/picked_survivor_perk/list_picked_survivor_perk.dart';
 import 'package:test_lamm/model/round/list_round.dart';
 import 'package:test_lamm/model/user/user.dart';
 import 'package:uuid/uuid.dart';
@@ -51,6 +57,26 @@ base class GameMatch extends BaseModel {
   }
 
   @nonVirtual
+  ListBalanceKiller get getListBalanceKillerWhereNotBannedAndNotPickedParametersThree {
+    final ListBalanceKiller clone = balance.listBalanceKiller.clone();
+    for(final BalanceKiller itemModel in balance.listBalanceKiller.listModel) {
+      for(final BannedKiller itemModelFirst in listBannedKiller.listModel) {
+        if(itemModelFirst.killer.uniqueId == itemModel.killer.uniqueId) {
+          clone.deleteFromUniqueIdByModelParameterListModel(itemModel.uniqueId);
+          break;
+        }
+      }
+      for(final PickedKiller itemModelFirst in listPickedKiller.listModel) {
+        if(itemModelFirst.killer.uniqueId == itemModel.killer.uniqueId) {
+          clone.deleteFromUniqueIdByModelParameterListModel(itemModel.uniqueId);
+          break;
+        }
+      }
+    }
+    return clone;
+  }
+
+  @nonVirtual
   ListBannedKiller get getListBannedKillerParametersListBannedKillerAndFirstUser {
     return listBannedKiller.getListBannedKillerFromUniqueIdByUserParameterListModel(firstUser.uniqueId);
   }
@@ -61,8 +87,23 @@ base class GameMatch extends BaseModel {
   }
 
   @nonVirtual
+  ListPickedKiller get getListPickedKillerParametersListPickedKillerAndFirstUser {
+    return listPickedKiller.getListPickedKillerFromUniqueIdByUserParameterListModel(firstUser.uniqueId);
+  }
+
+  @nonVirtual
+  ListPickedKiller get getListPickedKillerParametersListPickedKillerAndSecondUser {
+    return listPickedKiller.getListPickedKillerFromUniqueIdByUserParameterListModel(secondUser.uniqueId);
+  }
+
+  @nonVirtual
   String get getStringWhereShowBannedKillersAndThoseWhoAreNotBannedYet {
     return "$getListBannedKillerParametersListBannedKillerAndFirstUser\n$getListBannedKillerParametersListBannedKillerAndSecondUser\n$getListBalanceKillerWhereNotBannedParametersBalanceAndListBannedKiller";
+  }
+
+  @nonVirtual
+  String get getStringWhereShowPickedKillersAndThoseWhoAreNotBannedAndNotPickedYet {
+    return "$getListPickedKillerParametersListPickedKillerAndFirstUser\n$getListPickedKillerParametersListPickedKillerAndSecondUser\n$getListBalanceKillerWhereNotBannedAndNotPickedParametersThree";
   }
 
   @nonVirtual
@@ -75,6 +116,12 @@ base class GameMatch extends BaseModel {
   void insertBannedKillerFromIndexParametersListBannedKillerAndSecondUser(int index) {
     final itemModel = getListBalanceKillerWhereNotBannedParametersBalanceAndListBannedKiller.listModel[index];
     listBannedKiller.insertFromNewModelParameterListModel(BannedKiller(Uuid().v1(), itemModel.killer.clone(), DateTime.now(), secondUser.clone()));
+  }
+
+  @nonVirtual
+  void insertPickedKillerFromIndexParametersListPickedKillerAndFirstUser(int index) {
+    final itemModel = getListBalanceKillerWhereNotBannedAndNotPickedParametersThree.listModel[index];
+    listPickedKiller.insertFromNewModelParameterListModel(PickedKiller(Uuid().v1(), itemModel.killer.clone(), DateTime.now(), firstUser.clone(), PickedMaps("",Maps("","","")), ListBannedMaps(List.empty(growable: true)), ListPickedKillerPerk(List.empty(growable: true)), ListPickedSurvivorPerk(List.empty(growable: true))));
   }
 
   @nonVirtual
