@@ -50,7 +50,7 @@ final class MainVM {
         AlgorithmsUtility.debugPrintWhereConsoleFromThisClassAndText(this, "Navigation(${dataWNamed.userWUsername}\nExit: 0\nSearchGame: 1\nUnAuthorization: 2\nInput: )");
         final input = stdin.readLineSync();
         final numberWhereStrConvertedWZeroFromInput = AlgorithmsUtility.getNumberWhereStrConvertedWZeroFromInput(input);
-        _choice(numberWhereStrConvertedWZeroFromInput);
+        _navigation(numberWhereStrConvertedWZeroFromInput);
         break;
     }
   }
@@ -61,7 +61,7 @@ final class MainVM {
         .isLoading = false;
   }
 
-  void _choice(int number) {
+  void _navigation(int number) {
     if(number == 0) {
       return;
     }
@@ -69,24 +69,24 @@ final class MainVM {
         .getDataForNamed
         .isWhereEqualsOneFromNumber(number);
     if(isWhereEqualsOneFromNumber) {
-      _firstQQChoiceQQIsWhereEqualsOneFromNumber();
+      _firstQQNavigationQQIsWhereEqualsOneFromNumber();
       return;
     }
     final isWhereEqualsTwoFromNumber = _namedStreamWState
         .getDataForNamed
         .isWhereEqualsTwoFromNumber(number);
     if(isWhereEqualsTwoFromNumber) {
-      _firstQQChoiceQQIsWhereEqualsTwoFromNumber();
+      _firstQQNavigationQQIsWhereEqualsTwoFromNumber();
       return;
     }
   }
 
-  void _firstQQChoiceQQIsWhereEqualsOneFromNumber() {
+  void _firstQQNavigationQQIsWhereEqualsOneFromNumber() {
     _tempCacheProvider.updateWNotify(KeysTempCacheProviderUtility.enumRoutersUtility, EnumRoutersUtility.searchGameVM);
     _dispose();
   }
 
-  void _firstQQChoiceQQIsWhereEqualsTwoFromNumber() {
+  void _firstQQNavigationQQIsWhereEqualsTwoFromNumber() {
     _tempCacheProvider.updateWNotify(KeysTempCacheProviderUtility.token, Token("",""));
     _dispose();
   }

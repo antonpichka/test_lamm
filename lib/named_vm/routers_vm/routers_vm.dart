@@ -71,35 +71,6 @@ final class RoutersVM {
     }
   }
 
-  Future<void> _firstRequest() async {
-    final isWhereIsNotEmptyByUniqueIdParameterToken = _namedStreamWState
-        .getDataForNamed
-        .isWhereIsNotEmptyByUniqueIdParameterToken();
-    if(isWhereIsNotEmptyByUniqueIdParameterToken) {
-      _firstQQFirstRequestQQIsWhereIsNotEmptyByUniqueIdParameterToken();
-      return;
-    }
-    _namedStreamWState
-        .getDataForNamed
-        .isLoading = false;
-  }
-
-  void _firstQQFirstRequestQQIsWhereIsNotEmptyByUniqueIdParameterToken() {
-    final userWUsername = UserWUsername(
-        "65a63bd2-d1cd-11ef-9cd2-0242ac120002",
-        User(
-            "65a63bd2-d1cd-11ef-9cd2-0242ac120002",
-            DateTime.fromMillisecondsSinceEpoch(1736516582),
-            "Discord"),
-        "Top1");
-    _namedStreamWState
-        .getDataForNamed
-        .isLoading = false;
-    _namedStreamWState
-        .getDataForNamed
-        .userWUsername = userWUsername;
-  }
-
   void _callbackYYListenToken(Token event) {
     _namedStreamWState
         .getDataForNamed
@@ -117,14 +88,8 @@ final class RoutersVM {
     _namedStreamWState.notifyStreamDataForNamed();
   }
 
-  void _callbackYYListenEnumRoutersUtility(EnumRoutersUtility event) {
-    _namedStreamWState
-        .getDataForNamed
-        .enumRoutersUtility = event;
-    _namedStreamWState.notifyStreamDataForNamed();
-  }
-
   void _firstQQCallbackYYListenTokenQQIsWhereIsNotEmptyByUniqueIdParameterToken() {
+    /// Request
     final userWUsername = UserWUsername(
         "65a63bd2-d1cd-11ef-9cd2-0242ac120002",
         User(
@@ -136,5 +101,42 @@ final class RoutersVM {
         .getDataForNamed
         .userWUsername = userWUsername;
     _namedStreamWState.notifyStreamDataForNamed();
+  }
+
+  void _callbackYYListenEnumRoutersUtility(EnumRoutersUtility event) {
+    _namedStreamWState
+        .getDataForNamed
+        .enumRoutersUtility = event;
+    _namedStreamWState.notifyStreamDataForNamed();
+  }
+
+  Future<void> _firstRequest() async {
+    final isWhereIsNotEmptyByUniqueIdParameterToken = _namedStreamWState
+        .getDataForNamed
+        .isWhereIsNotEmptyByUniqueIdParameterToken();
+    if(isWhereIsNotEmptyByUniqueIdParameterToken) {
+      _firstQQFirstRequestQQIsWhereIsNotEmptyByUniqueIdParameterToken();
+      return;
+    }
+    _namedStreamWState
+        .getDataForNamed
+        .isLoading = false;
+  }
+
+  void _firstQQFirstRequestQQIsWhereIsNotEmptyByUniqueIdParameterToken() {
+    /// Request
+    final userWUsername = UserWUsername(
+        "65a63bd2-d1cd-11ef-9cd2-0242ac120002",
+        User(
+            "65a63bd2-d1cd-11ef-9cd2-0242ac120002",
+            DateTime.fromMillisecondsSinceEpoch(1736516582),
+            "Discord"),
+        "Top1");
+    _namedStreamWState
+        .getDataForNamed
+        .isLoading = false;
+    _namedStreamWState
+        .getDataForNamed
+        .userWUsername = userWUsername;
   }
 }

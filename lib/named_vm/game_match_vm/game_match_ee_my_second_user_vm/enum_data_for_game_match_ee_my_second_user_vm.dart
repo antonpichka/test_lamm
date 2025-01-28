@@ -1,5 +1,60 @@
 enum EnumDataForGameMatchEEMySecondUserVM {
   isLoading,
   exception,
-  second
+
+  thisIsNotMyPickedKillerWEnemyTurnToBanTheKillersMaps,
+  thisIsNotMyPickedKillerWMyTurnToBanTheKillersMaps,
+  thisIsNotMyPickedKillerWEnemyTurnToPickTheKillersPerks,
+  thisIsNotMyPickedKillerWMyTurnToPickTheKillersPerks,
+  thisIsNotMyPickedKillerWEnemyTurnToPickTheSurvivorsPerks,
+  thisIsNotMyPickedKillerWMyTurnToPickTheSurvivorsPerks,
+
+  thisIsMyPickedKillerWMyTurnToBanTheKillersMaps,
+  thisIsMyPickedKillerWEnemyTurnToBanTheKillersMaps,
+  thisIsMyPickedKillerWMyTurnToPickTheKillersPerks,
+  thisIsMyPickedKillerWEnemyTurnToPickTheKillersPerks,
+  thisIsMyPickedKillerWMyTurnToPickTheSurvivorsPerks,
+  thisIsMyPickedKillerWEnemyTurnToPickTheSurvivorsPerks,
+
+  thisIsNobodyPickedKillerWEnemyTurnToBanTheKillersMaps,
+  thisIsNobodyPickedKillerWMyTurnToBanTheKillersMaps,
+  thisIsNobodyPickedKillerWEnemyTurnToPickTheKillersPerks,
+  thisIsNobodyPickedKillerWMyTurnToPickTheKillersPerks,
+  thisIsNobodyPickedKillerWEnemyTurnToPickTheSurvivorsPerks,
+  thisIsNobodyPickedKillerWMyTurnToPickTheSurvivorsPerks,
+
+  thisIsPickedKillerWSystemTurnToPickTheKillersMaps,
+  thisIsPickedKillerWSystemTurnToPickTheKillersPerks,
+  thisIsPickedKillerWSystemTurnToPickTheSurvivorsPerks,
+
+  enemyTurnToBanTheKillerInTheFirstStage,
+  myTurnToBanTheKillerInTheFirstStage,
+  enemyTurnToPickTheKillerInTheFirstStage,
+  myTurnToPickTheKillerInTheFirstStage,
+  enemyTurnToBanTheKillerInTheSecondStage,
+  myTurnToBanTheKillerInTheSecondStage,
+  systemTurnToPickTheKillerInTheSecondStage,
+
+  thisIsNotMyPickedKillerInRoundWEnemyKillerNotReady,
+  thisIsNotMyPickedKillerInRoundWEnemyKillerReadyAndMySurvivorNotReady,
+  thisIsNotMyPickedKillerInRoundWEnemyKillerReadyAndMySurvivorReady,
+  thisIsNotMyPickedKillerInRoundWMyKillerNotReady,
+  thisIsNotMyPickedKillerInRoundWMyKillerReadyAndEnemySurvivorNotReady,
+  thisIsNotMyPickedKillerInRoundWMyKillerReadyAndEnemySurvivorReady,
+
+  thisIsMyPickedKillerInRoundWMyKillerNotReady,
+  thisIsMyPickedKillerInRoundWMyKillerReadyAndEnemySurvivorNotReady,
+  thisIsMyPickedKillerInRoundWMyKillerReadyAndEnemySurvivorReady,
+  thisIsMyPickedKillerInRoundWEnemyKillerNotReady,
+  thisIsMyPickedKillerInRoundWEnemyKillerReadyAndMySurvivorNotReady,
+  thisIsMyPickedKillerInRoundWEnemyKillerReadyAndMySurvivorReady,
+
+  thisIsNobodyPickedKillerInRoundWEnemyKillerNotReady,
+  thisIsNobodyPickedKillerInRoundWEnemyKillerReadyAndMySurvivorNotReady,
+  thisIsNobodyPickedKillerInRoundWEnemyKillerReadyAndMySurvivorReady,
+  thisIsNobodyPickedKillerInRoundWMyKillerNotReady,
+  thisIsNobodyPickedKillerInRoundWMyKillerReadyAndEnemySurvivorNotReady,
+  thisIsNobodyPickedKillerInRoundWMyKillerReadyAndEnemySurvivorReady,
+
+  completed
 }
