@@ -25,6 +25,18 @@ base class ListPickedKiller<T extends PickedKiller> extends BaseListModel<T> {
   }
 
   @nonVirtual
+  ListPickedKiller getListPickedKillerFromUniqueIdByUserParameterListModel(String uniqueIdByUser) {
+    final ListPickedKiller listPickedKiller = ListPickedKiller(List.empty(growable: true));
+    for(final T itemModel in listModel) {
+      if(itemModel.user.uniqueId != uniqueIdByUser) {
+        continue;
+      }
+      listPickedKiller.insertFromNewModelParameterListModel(itemModel.clone());
+    }
+    return listPickedKiller;
+  }
+
+  @nonVirtual
   int getNumberOfPickedKillersFromUniqueIdByUserParameterListModel(String uniqueIdByUser) {
     int iteration = 0;
     for(final T itemModel in listModel) {
